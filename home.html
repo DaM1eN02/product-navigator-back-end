@@ -3,23 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial">
-        <title>Log In to Product-Navigator</title>
+        <title>Product-Navigator</title>
         <link rel="stylesheet" href="home.css">
         <script src="home.js"></script>
     </head>
     <body>
-        <main>
-            <section class="bar">
-                <img src="images/Blue.png" alt="Product-Navigator" height="100px" width="100px" onclick="homePage()">
-                <h1>Product-Navigator</h1>
-                <div id="login">
-                    Log In
-                </div>
-                <div id="register">
-                    Register
-                </div>
-            </section>
+        <nav class="bar">
+            <img src="images/Blue.png" alt="Product-Navigator" height="100px" width="100px" onclick="homePage()">
+            <h1>Product-Navigator</h1>
+            <div id="signIn">
+                <h3 id="login" onclick="login()">Log In</h3>
+            </div>
+        </nav>
 
+        <main>
             <section class="menu">
                 <div class="home">
                     <img src="images/home.png" alt="Home" height="100px" width="100px" onclick="home()">
@@ -34,13 +31,13 @@
 
             <section class="glass">
                 <div id="home">
-                    A
+                    
                 </div>
                 <div id="products">
-                    B
+                    
                 </div>
                 <div id="markets">
-                    C
+                    
                 </div>
             </section>
 

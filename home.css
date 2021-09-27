@@ -52,12 +52,14 @@ main {
 }
 
 .bar {
-    left: 1%;
     top: 0%;
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    background: lightblue;
+    padding: 5px;
+    justify-content: space-between;
 }
 
 .circle1, .circle2 {
@@ -84,10 +86,6 @@ main {
     left: 15%;
 }
 
-#login, #register {
-    right: 5%;
-}
-
-img:hover {
+img:hover, #signIn {
     cursor: pointer;
 }
