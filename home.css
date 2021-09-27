@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3)
+        );
+    border-radius: 2rem;
+    z-index: 10;
+    backdrop-filter: blur(2rem);
+}
+
+.menu {
+    background: white;
+    min-height: 80vh;
+    width: 10%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3)
+        );
+    border-radius: 2rem;
+    z-index: 10;
+    backdrop-filter: blur(2rem);
+    left: 2%;
+    position: absolute;
+}
+
+.circle1, .circle2 {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.1)
+        );
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.circle1 {
+    top: 5%;
+    right: 15%;
+}
+
+.circle2 {
+    bottom: 5%;
+    left: 15%;
+}
