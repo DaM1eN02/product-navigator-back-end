@@ -1,96 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
-    min-height: 100vh;
-    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
 }
 
 .glass {
-    background: white;
-    min-height: 80vh;
-    width: 70%;
-    background: linear-gradient(
-        to right bottom,
-        rgba(255,255,255,0.6),
-        rgba(255,255,255,0.1)
-        );
-    border-radius: 2rem;
-    z-index: 10;
-    backdrop-filter: blur(2rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: white;
+  min-height: 80vh;
+  width: 70%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 2rem;
+  z-index: 10;
+  backdrop-filter: blur(2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-    background: white;
-    height: 60vh;
-    width: 10%;
-    background: linear-gradient(
-        to right bottom,
-        rgba(255,255,255,0.7),
-        rgba(255,255,255,0.3)
-        );
-    border-radius: 2rem;
-    z-index: 10;
-    backdrop-filter: blur(2rem);
-    left: 3%;
-    position: absolute;
+  background: white;
+  height: 60vh;
+  width: 10%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 10;
+  backdrop-filter: blur(2rem);
+  left: 3%;
+  position: absolute;
 }
 
 .bar {
-    top: 0%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: lightblue;
-    padding: 5px;
-    justify-content: space-between;
+  top: 0%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: lightblue;
+  padding: 5px;
+  justify-content: space-between;
 }
 
-.bar>div {
-    display: flex;
-    align-items: center;
+.bar > div {
+  display: flex;
+  align-items: center;
 }
 
 #login {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.circle1, .circle2 {
-    background: white;
-    background: linear-gradient(
-        to right bottom,
-        rgba(255,255,255,0.6),
-        rgba(255,255,255,0.1)
-        );
-    height: 8rem;
-    width: 8rem;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.1)
+  );
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .circle1 {
-    top: 5%;
-    right: 10%;
+  top: 5%;
+  right: 10%;
 }
 
 .circle2 {
-    bottom: 5%;
-    left: 10%;
+  bottom: 5%;
+  left: 10%;
 }
 
-img:hover, #signIn {
-    cursor: pointer;
+img:hover,
+#signIn {
+  cursor: pointer;
 }
