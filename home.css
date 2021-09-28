@@ -16,20 +16,23 @@ main {
 .glass {
     background: white;
     min-height: 80vh;
-    width: 60%;
+    width: 70%;
     background: linear-gradient(
         to right bottom,
-        rgba(255,255,255,0.7),
-        rgba(255,255,255,0.3)
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.1)
         );
     border-radius: 2rem;
     z-index: 10;
     backdrop-filter: blur(2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
     background: white;
-    min-height: 80vh;
+    height: 60vh;
     width: 10%;
     background: linear-gradient(
         to right bottom,
@@ -47,8 +50,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin-bottom: 25%;
+    margin-top: 25%;
 }
 
 .bar {
@@ -67,6 +70,11 @@ main {
     align-items: center;
 }
 
+#login {
+    align-items: center;
+    justify-content: center;
+}
+
 .circle1, .circle2 {
     background: white;
     background: linear-gradient(
@@ -74,8 +82,8 @@ main {
         rgba(255,255,255,0.6),
         rgba(255,255,255,0.1)
         );
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
     position: absolute;
     border-radius: 50%;
     z-index: 1;
@@ -83,12 +91,12 @@ main {
 
 .circle1 {
     top: 5%;
-    right: 15%;
+    right: 10%;
 }
 
 .circle2 {
     bottom: 5%;
-    left: 15%;
+    left: 10%;
 }
 
 img:hover, #signIn {
