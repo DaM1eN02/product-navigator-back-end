@@ -6,7 +6,7 @@ var markets = document.getElementById('markets');
 var caption = document.getElementById('caption');
 
 function homePage() {
-    window.location.href = "../home/home.html";
+    window.location.href = "../index/index.html";
 }
 
 function home() {
