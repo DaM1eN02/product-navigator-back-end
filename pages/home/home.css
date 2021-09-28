@@ -46,14 +46,6 @@ main {
     position: absolute;
 }
 
-.home, .products, .markets{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25%;
-    margin-top: 25%;
-}
-
 .bar {
     top: 0%;
     position: absolute;
