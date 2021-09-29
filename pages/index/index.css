@@ -6,53 +6,44 @@
 
 main {
   min-height: 100vh;
+  min-width: 100vh;
   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 0;
 }
 
+.menu,
 .glass {
-  background: white;
-  min-height: 80vh;
-  width: 70%;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 255, 255, 0.1)
-  );
-  border-radius: 2rem;
-  z-index: 10;
-  backdrop-filter: blur(2rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu {
-  background: white;
-  height: 60vh;
-  width: 10%;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
+  min-height: 83vh;
+  position: absolute;
+  margin: 1vh;
+  background-color: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
   z-index: 10;
   backdrop-filter: blur(2rem);
-  left: 3%;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  width: 80%;
+  right: 0;
+}
+
+.menu {
+  width: 5vh;
+  left: 0;
 }
 
 .bar {
-  top: 0%;
-  position: absolute;
   display: flex;
   align-items: center;
   width: 100%;
-  background: lightblue;
+  background: linear-gradient(to top, lightblue, lightgrey);
   padding: 5px;
   justify-content: space-between;
 }
@@ -67,32 +58,6 @@ main {
   justify-content: center;
 }
 
-.circle1,
-.circle2 {
-  background: white;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 255, 255, 0.1)
-  );
-  height: 8rem;
-  width: 8rem;
-  position: absolute;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.circle1 {
-  top: 5%;
-  right: 10%;
-}
-
-.circle2 {
-  bottom: 5%;
-  left: 10%;
-}
-
-img:hover,
-#signIn {
+img:hover {
   cursor: pointer;
 }
