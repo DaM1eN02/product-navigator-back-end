@@ -18,37 +18,64 @@
                 <h1 id="caption">Product-Navigator</h1>
             </div>
             <div id="signIn">
-                <a href="../login/login.html"><h1>Log In</h1></a>
+                <a href="" onclick="login()"><h1>Log In</h1></a>
                 <h1>&emsp;|&emsp;</h1>   
-                <a href="../login/login.html"><h1>Register</h1></a>
+                <a href="" onclick="register()"><h1>Register</h1></>
             </div>
         </nav>
 
         <main>
-            <main>
-                <section class="glass">
-                    <div id="form">
-                        <img src="../../images/Blue.png" alt="Product-Navigator" height="300rem" width="300rem">
+            <section class="glass">
+                <div id="formLogin">
+                        <img src="../../images/Blue.png" alt="Product-Navigator" height="10%" width="10%">
 
                         <div class="header">
                             <h1>Product-Navigator</h1>
                         </div>
 
-                        <div class="form" id="username">
+                        <div class="form">
                             <input type="text" placeholder="Your Username . . .">
                             <span>Username</span>
                         </div>
 
-                        <div class="form" id="password">
+                        <div class="form">
                             <input type="password" placeholder="Your Password . . .">
                             <span>Password</span>
                         </div>
-                        
-                        <div class="button">
-                            <button id="login">Log In</button>
+
+                        <button class="button">Log In</button>
+                </div>
+
+                <div id="formRegister" hidden>
+                        <img src="../../images/Blue.png" alt="Product-Navigator" height="10%" width="10%">
+
+                        <div class="header">
+                            <h1>Prouct-Navigator</h1>
                         </div>
-                    </div>
-                </section>
+
+                        <div class="form">
+                            <input type="text" placeholder="Your Username . . .">
+                            <span>Username</span>
+                        </div>
+
+                        <div class="form">
+                            <input type="email" placeholder="Your E-Mail . . .">
+                            <span>E-Mail</span>
+                        </div>
+
+                        <div class="form">
+                            <input type="password" placeholder="Your Password . . .">
+                            <span>Password</span>
+                        </div>
+
+                        <div class="form">
+                            <input type="password" placeholder="Confirm Password . . .">
+                            <span>Confirm Password</span>
+                        </div>
+
+                        <button class="button">Register</button>                    
+                </div>
+            </section>
         </main>
     </body>
 </html>
