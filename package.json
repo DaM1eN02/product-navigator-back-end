@@ -2,9 +2,9 @@
   "name": "product-navigator-webapp",
   "version": "1.0.0",
   "description": "Product-Navigator Web-Development",
-  "main": "index.js",
+  "main": "../Web-Dev/api/server.js",
   "scripts": {
-    
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DaM1eN02/Product-Navigator-WebApp/front-end/index/index.html",
   "dependencies": {
+    "express": "^4.17.1",
     "nodemon": "^2.0.13"
   }
 }
