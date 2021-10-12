@@ -7,7 +7,9 @@ const server = express();
 //Routes
 
 server.get('/', (req,res) => {
-    res.send('Worked');
+    if (req = 3000) {
+        res.send('Worked');
+    }
 })
 
 // Server listens to the requests
