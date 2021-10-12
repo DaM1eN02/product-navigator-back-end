@@ -1,8 +1,8 @@
 {
   "name": "product-navigator-webapp",
   "version": "1.0.0",
-  "description": "Product-Navigator Web-Development",
-  "main": "../Web-Dev/api/server.js",
+  "description": "Repository for the actual Website Application",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
   },
@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/DaM1eN02/Product-Navigator-WebApp.git"
   },
-  "author": "Damien Arriens",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DaM1eN02/Product-Navigator-WebApp/issues"
   },
-  "homepage": "https://github.com/DaM1eN02/Product-Navigator-WebApp/front-end/index/index.html",
+  "homepage": "https://github.com/DaM1eN02/Product-Navigator-WebApp#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.13"
