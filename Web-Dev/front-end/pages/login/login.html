@@ -7,7 +7,7 @@
         <title>Product-Navigator</title>
         <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" href="login.css"
-        <link rel="icon" href="/images/Blue.png">
+        <link rel="icon" href="../../images/Blue.png">
         <script src="../main.js"></script>
         <script src="login.js"></script>
     </head>
@@ -18,62 +18,66 @@
                 <h1 id="caption">Product-Navigator</h1>
             </div>
             <div id="signIn">
-                <a href="" onclick="login()"><h1>Log In</h1></a>
+                <h1 class="click" onclick="loginPage()">Log In</h1>
                 <h1>&emsp;|&emsp;</h1>   
-                <a href="" onclick="register()"><h1>Register</h1></>
+                <h1 class="click" onclick="registerPage()">Register</h1>
             </div>
         </nav>
 
         <main>
             <section class="glass">
-                <div id="formLogin">
+                <div id="formLogin" style="display: block;">
                         <img src="../../images/Blue.png" alt="Product-Navigator" height="10%" width="10%">
 
                         <div class="header">
+                            <h1>Log In to</h1>
+                            <br>
                             <h1>Product-Navigator</h1>
                         </div>
 
                         <div class="form">
-                            <input type="text" placeholder="Your Username . . .">
+                            <input id="LoginUsername" type="text" placeholder="Your Username or E-Mail . . .">
                             <span>Username</span>
                         </div>
 
                         <div class="form">
-                            <input type="password" placeholder="Your Password . . .">
+                            <input id="LoginPassword" type="password" placeholder="Your Password . . .">
                             <span>Password</span>
                         </div>
 
-                        <button class="button">Log In</button>
+                        <button class="button" onclick="login()">Log In</button>
                 </div>
 
-                <div id="formRegister" hidden>
+                <div id="formRegister" style="display: none;">
                         <img src="../../images/Blue.png" alt="Product-Navigator" height="10%" width="10%">
 
                         <div class="header">
-                            <h1>Prouct-Navigator</h1>
+                            <h1>Register to</h1>
+                            <br>
+                            <h1>Product-Navigator</h1>
                         </div>
 
                         <div class="form">
-                            <input type="text" placeholder="Your Username . . .">
+                            <input id="RegisterUsername" type="text" placeholder="Your Username . . .">
                             <span>Username</span>
                         </div>
 
                         <div class="form">
-                            <input type="email" placeholder="Your E-Mail . . .">
+                            <input id="RegisterEmail" type="email" placeholder="Your E-Mail . . .">
                             <span>E-Mail</span>
                         </div>
 
                         <div class="form">
-                            <input type="password" placeholder="Your Password . . .">
+                            <input id="RegisterPassword1" type="password" placeholder="Your Password . . .">
                             <span>Password</span>
                         </div>
 
                         <div class="form">
-                            <input type="password" placeholder="Confirm Password . . .">
+                            <input id="RegisterPassword2" type="password" placeholder="Confirm Password . . .">
                             <span>Confirm Password</span>
                         </div>
 
-                        <button class="button">Register</button>                    
+                        <button class="button" onclick="register()">Register</button>                    
                 </div>
             </section>
         </main>
