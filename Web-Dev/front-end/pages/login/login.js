@@ -1,11 +1,11 @@
 function loginPage() {
-    document.getElementById("formLogin").style.display = "block";
-    document.getElementById("formRegister").style.display = "none";
+    document.getElementById('formLogin').style.display = "block";
+    document.getElementById('formRegister').style.display = "none";
 }
 
 function registerPage() {
-    document.getElementById("formLogin").style.display = "none";
-    document.getElementById("formRegister").style.display = "block";
+    document.getElementById('formLogin').style.display = "none";
+    document.getElementById('formRegister').style.display = "block";
 }
 
 function login() {
@@ -30,6 +30,6 @@ function register() {
             password = password1
         }
     } else {
-        alert('Your Passwords do not match each other');
+        alert("Your Passwords do not match each other");
     }
 }
