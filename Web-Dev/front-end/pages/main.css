@@ -1,36 +1,22 @@
 /* Here are all modifiers that effect the whole project */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Gill Sans MT'
-}
-
 main {
   min-width: 100vh;
   min-height: 88.6vh;
-  background: #100f10;
+  background: var(--color-primary);
   z-index: 0;
 }
 
 .menu,
-.glass {
-  min-height: 86.6vh;
-  position: absolute;
-  margin: 1vh;
-  background-color: #363636;
-  border-radius: 2rem;
+.container {
   z-index: 10;
-  backdrop-filter: blur(2rem);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.glass {
+.container {
   width: 80%;
-  right: 0;
 }
 
 .menu {
