@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         removeInputError(document.getElementById("RegisterUsername"));
     });
 
+    document.querySelector("#linkPassword").addEventListener("click", e => {
+        e.preventDefault();
+        alert("Feature not availbale yet");
+    });
+
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
         

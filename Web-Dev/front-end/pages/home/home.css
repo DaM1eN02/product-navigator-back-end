@@ -53,6 +53,7 @@
 }
 
 .menu {
+  padding: 0;
   width: 25%;
   left: 0;
   display: grid;
@@ -65,14 +66,14 @@
   align-items: center;
 }
 
-h1 {
-  color: rgba(#ffffff, 0.6);
-}
-
 img:hover {
   cursor: pointer;
 }
 
 .section--hidden {
   display: none;
+}
+
+.section--selected {
+  background: var(--color-secondary);
 }
