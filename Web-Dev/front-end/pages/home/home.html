@@ -12,21 +12,50 @@
     <body>
         <nav class="bar">
             <div>
-                <img src="../../images/Blue.png" alt="Product-Navigator" height="100px" width="100px" onclick="homePage()">
+                <img id="icon" src="../../images/Blue.png" alt="Product-Navigator" height="100px" width="100px">
                 <h1 id="caption">Product-Navigator</h1>
             </div>
-            <div class="user">
-                
+            <div class="profile">
+                <img id="profile" src="" alt="Your Profile">
             </div>
         </nav>
 
         <main>
-            <section class="menu">
-
-            </section>
-            
-            <section class="container">
+            <section class="section section--hidden" id="user">
+                <div class="menu">
+                    <img id="personal" src="" alt="Personal Info">
+                    <img id="location" src="" alt="Location">
+                    <img id="settings" src="" alt="Settings">
+                    <img id="transfers" src="" alt="Recent Transfers">
+                    <img id="bookmarks" src="" alt="Bookmarks">
+                </div>
                 
+                <div class="container">
+                    <div class="personal">
+                        Personal
+                    </div>
+                    <div class="location section--hidden">
+                        Location
+                    </div>
+                    <div class="settings section--hidden">
+                        Settings
+                    </div>
+                    <div class="transfers section--hidden">
+                        Transfers
+                    </div>
+                    <div class="bookmarks section--hidden">
+                        Bookmarks
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="main">
+                <div class="menu">
+                    Main__Menu
+                </div>
+                
+                <div class="container">
+                    Main__Container
+                </div>
             </section>
         </main>
     </body>

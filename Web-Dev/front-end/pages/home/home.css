@@ -10,14 +10,12 @@
   --color-success: #4bb544;
 }
 
-main {
+.section {
   display: flex;
   min-width: 100vh;
   min-height: 88.6vh;
-  background: var(--color-primary);
-  z-index: 0;
   font-size: 18px;
-  justify-content: space-between;
+  background: var(--color-primary);
 }
 
 .bar {
@@ -36,7 +34,6 @@ main {
 
 .menu,
 .container {
-  position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -44,8 +41,8 @@ main {
   background: var(--color-primary-dark);
   border-radius: 2rem;
   top: 0;
-  height: 85vh;
-  min-height: 85vh;
+  height: 86.8vh;
+  min-height: 86.8vh;
   margin: 1rem;
   padding: 2rem;
 }
@@ -58,6 +55,9 @@ main {
 .menu {
   width: 25%;
   left: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .bar > div {
@@ -66,17 +66,13 @@ main {
 }
 
 h1 {
-  color: rgba(#fff, 0.6);
+  color: rgba(#ffffff, 0.6);
 }
 
 img:hover {
   cursor: pointer;
 }
 
-.click {
-  text-decoration: underline;
-}
-
-.click:hover {
-  cursor: pointer;
+.section--hidden {
+  display: none;
 }
