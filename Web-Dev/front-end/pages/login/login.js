@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("npm start");
+
     const loginForm = document.querySelector("#login");
     const registerForm = document.querySelector("#register");
 
