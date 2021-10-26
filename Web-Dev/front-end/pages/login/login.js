@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
-        fetch("129.0.0.1:4000/api/user/login", {
+        fetch("129.0.0.1:3000/api/user/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(LoginData),
         })
         .then((response) => {
-            alert(response.statusText);
+            alert(response.status);
             setFormMessage(loginForm, "success", "You are logged in!");
             setFormMessage(loginForm, "error", "Incorrect Username or Password!");
         })
