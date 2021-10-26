@@ -32,15 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
         
-        // AJAX Login
         let username = document.getElementById('LoginUsername').value;
         let password = document.getElementById('LoginPassword').value;
+
         const LoginData = {
-            "id": username,
-            "pw": password
+            email: username,
+            password: password
         };
 
-        // Send a token to the API and see if the password and username fits
+        $.ajax({
+            url: "localhost:4000/api/user/login",
+            type: "post",
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                alert(data);
+            },
+            data: JSON.stringify(LoginData),
+            processData: false,
+            contentType: "application/json; charset=UTF-8",
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert("Error: " + xhr.status + " " + thrownError);
+            }
+        });
 
         // IF SUCCESS
         setFormMessage(loginForm, "success", "You are logged in!");
@@ -61,12 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (password1 == password2) {
             const RegisterData = {
-                "id": username,
-                "email": email,
-                "password": password1
+                username: username,
+                email: email,
+                password: password1
             };
 
-            // AJAX Register
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(RegisterData)
+            };
+    
+            fetch( 'localhost:4000/api/user/register', options )
+            .then( response => response.json() )
+            .then( response => {
+                alert(response);
+            });
 
         } else {
             setFormMessage(registerForm, "error", "Your Passwords do not match each other!");
