@@ -40,29 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
-        $.ajax({
-            url: "localhost:4000/api/user/login",
-            type: "post",
-            dataType: "json",
-            contentType: "application/json",
-            success: function(data) {
-                alert(data);
+        fetch("129.0.0.1:4000/api/user/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-            data: JSON.stringify(LoginData),
-            processData: false,
-            contentType: "application/json; charset=UTF-8",
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert("Error: " + xhr.status + " " + thrownError);
-            }
+            body: JSON.stringify(LoginData),
+        })
+        .then((response) => {
+            alert(response.statusText);
+            setFormMessage(loginForm, "success", "You are logged in!");
+            setFormMessage(loginForm, "error", "Incorrect Username or Password!");
+        })
+        .catch((error) => {
+            console.log(error);
         });
-
-        // IF SUCCESS
-        setFormMessage(loginForm, "success", "You are logged in!");
-        //send to the home page
-
-        // IF ERROR
-        setFormMessage(loginForm, "error", "Incorrect Username or Password!");
-        // clear password
     });
 
     registerForm.addEventListener("submit", e => {
@@ -80,15 +72,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 password: password1
             };
 
-            const options = {
-                method: 'POST',
-                body: JSON.stringify(RegisterData)
-            };
-    
-            fetch( 'localhost:4000/api/user/register', options )
-            .then( response => response.json() )
-            .then( response => {
-                alert(response);
+            fetch("129.0.0.1:4000/api/user/register", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(RegisterData),
+            })
+            .then((response) => {
+                alert(response.statusText);
+                setFormMessage(loginForm, "success", "You are registered!");
+            })
+            .catch((error) => {
+                console.log(error);
             });
 
         } else {
