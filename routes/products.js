@@ -4,8 +4,8 @@ const verify = require('./verifyToken');
 router.get('/', verify, (req, res) => {
     res.json({
         posts: {
-                title: 'Fleischwurst', 
-        Preis: '4,50 Euro'
+            title: 'Fleischwurst', 
+            Preis: '4,50 Euro'
         }
     });
 });
