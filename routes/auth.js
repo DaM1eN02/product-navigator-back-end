@@ -95,36 +95,6 @@ router.post('/update', async (req, res) => {
         res.send({message: 'Data Updated'});
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*router.post('/update', async (req, res) => {
-
-    const user = await User.findOneAndUpdate(
-        {
-            name: "DamienQ"
-        },
-        {
-            email: "DamienQ@gmail.com"
-        })
-        res.send({message: 'Data Updated'});
-
-
-})*/
  module.exports = router;
  
  
