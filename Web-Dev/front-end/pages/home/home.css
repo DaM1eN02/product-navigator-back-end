@@ -3,9 +3,9 @@
   box-sizing: border-box;
   font-family: "Gill Sans MT";
 
-  --color-primary: #009579;
-  --color-primary-dark: #007f67;
-  --color-secondary: #252c6a;
+  --color-primary: #f3f3f3;
+  --color-primary-dark: #a8a8a8;
+  --color-secondary: #4a9eee;
   --color-error: #cc3333;
   --color-success: #4bb544;
 }
