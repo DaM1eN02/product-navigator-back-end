@@ -69,8 +69,62 @@ router.post('/login', async (req, res) => {
 });
 
 
+//UPDATE DATA
+
+router.post('/update', async (req, res) => {
+    res.contentType('application/json');
+    res.type('json');
+      
+    //Checking if the email exist
+    const user = await User.findOne({name: req.body.name });
+    if(!user) {
+        res.status(400);
+        return res.send({message: 'Username ist not found'});
+    }
+
+     const user2 = await User.findOneAndUpdate(
+        {
+            name: req.body.name,
+        },
+        {
+            name:       req.body.name,
+            email:      req.body.email,
+            password:   req.body.password,
+        
+        })
+        res.send({message: 'Data Updated'});
+});
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*router.post('/update', async (req, res) => {
+
+    const user = await User.findOneAndUpdate(
+        {
+            name: "DamienQ"
+        },
+        {
+            email: "DamienQ@gmail.com"
+        })
+        res.send({message: 'Data Updated'});
+
+
+})*/
  module.exports = router;
  
  
