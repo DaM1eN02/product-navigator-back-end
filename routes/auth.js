@@ -3,6 +3,8 @@ const User                                      = require ('../model/User');
 const {registerValidation, loginValidation }    = require ('../validation');
 const bcrypt                                    = require ('bcrypt');
 const jwt                                       = require ('jsonwebtoken');
+const { access } = require('fs');
+const { allow } = require('@hapi/joi');
 
 
 router.post('/register', async (req, res) => {
@@ -41,21 +43,33 @@ router.post('/register', async (req, res) => {
 //Login
 
 router.post('/login', async (req, res) => {
+    res.contentType('application/json');
+    res.type('json');
+
     const {error} = loginValidation(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+    if(error) {
+        res.status(400);
+        return res.send(error.details[0].message);
+    }
       
     //Checking if the email exist
     const user = await User.findOne({email: req.body.email });
-    if(!user) return res.status(400).send('Email ist not found');
+    if(!user) {
+        res.status(400);
+        return res.send({message: 'Email ist not found'});
+    }
     //PASSWORD IS CORRECT
     const validPass = await bcrypt.compare(req.body.password, user.password);
-    if(!validPass) return res.status(400).send('Invalid password');
-
-    res.send("Test");
+    if(!validPass) {
+        res.status(400);
+        return res.send({message: 'Invalid password'});
+    }
 
     //Create and assign a token
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
     res.header('auth-token', token).send(token);
+
+    res.send({message: 'Logged in!'});
 });
 
 

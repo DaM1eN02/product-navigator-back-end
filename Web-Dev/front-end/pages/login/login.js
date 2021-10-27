@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("npm start");
-
     const loginForm = document.querySelector("#login");
     const registerForm = document.querySelector("#register");
 
@@ -50,9 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(LoginData),
         })
         .then((response) => {
-            alert(response.status);
-            setFormMessage(loginForm, "success", "You are logged in!");
-            setFormMessage(loginForm, "error", "Incorrect Username or Password!");
+            if (response.ok) {
+                setFormMessage(loginForm, "success", "You are logged in!");
+                window.location.href = "../home/home.html";
+            } else {
+                setFormMessage(loginForm, "error", "Incorrect Username or Password!");
+            }
         })
         .catch((error) => {
             console.log(error);
