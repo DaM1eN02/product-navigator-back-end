@@ -68,6 +68,7 @@
 
 img:hover {
   cursor: pointer;
+  color: rgb(0, 66, 209);
 }
 
 .section--hidden {
@@ -76,4 +77,5 @@ img:hover {
 
 .section--selected {
   background: var(--color-secondary);
+  font-weight: bold;
 }
