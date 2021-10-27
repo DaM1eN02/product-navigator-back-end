@@ -3,9 +3,11 @@
   box-sizing: border-box;
   font-family: "Gill Sans MT";
 
-  --color-primary: #009579;
-  --color-primary-dark: #007f67;
-  --color-secondary: #252c6a;
+  --color-primary: #ffffff;
+  --color-primary-dark: #e0e0e0;
+  --color-secondary: #51c6f5;
+  --color-tertiary: blue;
+  --color-selected: rgb(165, 165, 165);
   --color-error: #cc3333;
   --color-success: #4bb544;
 }
@@ -68,6 +70,7 @@
 
 img:hover {
   cursor: pointer;
+  color: var(--color-tertiary);
 }
 
 .section--hidden {
@@ -75,5 +78,6 @@ img:hover {
 }
 
 .section--selected {
-  background: var(--color-secondary);
+  background: var(--color-selected);
+  font-weight: bold;
 }
