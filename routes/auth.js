@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
     const validPass = await bcrypt.compare(req.body.password, user.password);
     if(!validPass) return res.status(400).send('Invalid password');
 
-    res.send("../Web-Dev/front-end/pages/home/home.html");
+    res.send("Test");
 
     //Create and assign a token
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);

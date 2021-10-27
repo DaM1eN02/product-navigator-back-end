@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
-        fetch("129.0.0.1:3000/api/user/login", {
+        fetch("http://localhost:3000/api/user/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
