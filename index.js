@@ -20,6 +20,7 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
+const PORT = process.env.PORT || '8080';
 
 //Middlewares
 app.use(express.json());
@@ -28,6 +29,6 @@ app.use(allowCrossDomain);
 //Route Middlewares
 app.use('/api/user', authRoute);
 app.use('/api/products', productRoute);
-app.listen(8080, () => console.log('Server Up and running'));
+app.listen(PORT, () => console.log('Server Up and running'));
 
 
