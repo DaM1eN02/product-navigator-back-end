@@ -82,19 +82,19 @@ router.post('/update', async (req, res) => {
         return res.send({message: 'Username ist not found'});
     }
 
-     const user2 = await User.findOneAndUpdate(
-        {
+    const user2 = await User.findOneAndUpdate({
             name: req.body.name,
-        },
-        {
-            name:       req.body.name,
-            email:      req.body.email,
-            password:   req.body.password,
+    },
+    {
+        name:       req.body.name,
+        email:      req.body.email,
+        password:   req.body.password,
         
-        })
-        res.send({message: 'Data Updated'});
+    });
+
+    res.send({message: 'Data Updated'});
 });
 
- module.exports = router;
+module.exports = router;
  
  
