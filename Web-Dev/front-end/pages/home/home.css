@@ -79,18 +79,18 @@ img:hover {
 
 .section--selected {
   font-weight: bold;
-  border: 5px solid rgb(85, 85, 85);
-  border-radius: 40%;
+  border: 5px solid rgb(68, 68, 68);
+  border-radius: 50%;
 }
 #personal{
-  border-radius: 50%;
+  
 }
 #location{
-  border-radius: 50%;
+  
 }
 #settings{
-  border-radius: 50%;
+  
 }
 #bookmarks{
-  border-radius: 50%;
+  
 }
