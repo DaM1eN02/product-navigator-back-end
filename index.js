@@ -23,6 +23,7 @@ var allowCrossDomain = function(req, res, next) {
 const PORT = process.env.PORT || '8080';
 
 app.get('/', function(req, res) {
+    res.setHeader("Content-Type", "application/php");
     res.sendFile('index.php', {root: '.'});
 });
 
