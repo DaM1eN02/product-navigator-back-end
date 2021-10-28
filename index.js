@@ -33,5 +33,5 @@ app.listen(PORT, () => console.log('Server Up and running'));
 
 app.get('/', function(req, res) {
     res.contentType = "text/html";
-    res.location("/Web-Dev/front-end/pages/login/login.html");
+    res.send('/Web-Dev/front-end/pages/login/login.html');
 });
