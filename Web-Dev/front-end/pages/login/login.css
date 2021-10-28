@@ -19,6 +19,8 @@ main {
   justify-content: center;
   font-size: 18px;
   background: var(--color-primary);
+  background-image:url(../../images/background2.jpg);
+  background-size: cover;
 }
 
 .container {
@@ -103,7 +105,7 @@ span {
   width: 6rem;
   font-size: 0.875rem;
   border-radius: inherit;
-  background: rgb(0, 110, 101);
+  background: rgb(0, 118, 187);
   pointer-events: none;
   transition: all 0.35s;
   color: #ffffff;
@@ -134,7 +136,7 @@ input:focus ~ span {
 }
 
 .form__button {
-  background: rgb(0, 110, 101);
+  background: rgb(3, 134, 73);
   padding: 2rem;
   border-radius: 1rem;
   border-bottom-left-radius: 2rem;
@@ -163,6 +165,3 @@ input:focus ~ span {
   text-decoration: underline;
 }
 
-.background {
-  background-image: url(../../images/backcolor.PNG);
-}
