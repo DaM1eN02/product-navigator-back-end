@@ -23,7 +23,7 @@ var allowCrossDomain = function(req, res, next) {
 const PORT = process.env.PORT || '8080';
 
 app.get('/', function(req, res) {
-    res.sendFile('index.php');
+    res.sendFile('./index.php');
 });
 
 //Middlewares
