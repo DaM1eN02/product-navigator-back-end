@@ -13,11 +13,13 @@ router.post('/register', async (req, res) => {
     const {error} = registerValidation(req.body);
     if(error) return res.status(400).send(error.details[0].message);
 
-    //CHECK OF USER IS IN DATABASE
+    //CHECK IF USER IS IN DATABASE
 
     const emailExist = await User.findOne({email: req.body.email });
     if(emailExist) return res.status(400).send('Email already exists');
 
+    const nameExist = await User.findOne({name: req.body.name});
+    if(nameExist) return res.status(400).send('Username already exists');
 
     //HASH THE PASSWORD
 
@@ -87,7 +89,6 @@ router.post('/update', async (req, res) => {
             name: req.body.name,
         },
         {
-            name:       req.body.name,
             email:      req.body.email,
             password:   req.body.password,
         
