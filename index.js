@@ -34,5 +34,3 @@ app.listen(PORT, () => console.log('Server Up and running'));
 app.get('/', function(req, res) {
     res.sendFile("/Web-Dev/front-end/pages/login/login.html");
 });
-
-
