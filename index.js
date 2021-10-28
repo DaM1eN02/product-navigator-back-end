@@ -22,6 +22,11 @@ var allowCrossDomain = function(req, res, next) {
 }
 const PORT = process.env.PORT || '8080';
 
+app.get('/', function(req, res) {
+    res.contentType = "text/html";
+    res.sendFile('login.html', {root: './Web-Dev/front-end/pages/login'});
+});
+
 //Middlewares
 app.use(express.json());
 app.use(allowCrossDomain);
@@ -30,8 +35,3 @@ app.use(allowCrossDomain);
 app.use('/api/user', authRoute);
 app.use('/api/products', productRoute);
 app.listen(PORT, () => console.log('Server Up and running'));
-
-app.get('/', function(req, res) {
-    res.contentType = "text/html";
-    res.redirect('/Web-Dev/front-end/pages/login/login.html');
-});
