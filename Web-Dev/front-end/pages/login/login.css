@@ -162,3 +162,7 @@ input:focus ~ span {
 .form__link:hover {
   text-decoration: underline;
 }
+
+.background {
+  background-image: url(../../images/backcolor.PNG);
+}
