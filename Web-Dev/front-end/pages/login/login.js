@@ -70,26 +70,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (password1 == password2) {
             const RegisterData = {
-                username: username,
+                name: username,
                 email: email,
                 password: password1
             };
 
-            fetch("129.0.0.1:4000/api/user/register", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(RegisterData),
+            fetch("http://localhost:3000/api/user/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(RegisterData),
             })
             .then((response) => {
-                alert(response.statusText);
-                setFormMessage(loginForm, "success", "You are registered!");
+                if (response.ok) {
+                    setFormMessage(loginForm, "success", "You are registered!");
+                    window.location.href = "../home/home.html";
+                } else {
+                    setFormMessage(loginForm, "error", "Username or Email are already registered!");
+                }
             })
             .catch((error) => {
                 console.log(error);
             });
-
         } else {
             setFormMessage(registerForm, "error", "Your Passwords do not match each other!");
             document.getElementById('RegisterPassword1').value = "";
@@ -99,8 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector("#RegisterUsername").addEventListener("change", () => {
         const inputElement = document.getElementById("RegisterUsername");
-        if (inputElement.value.length > 0 && inputElement.value.length < 8) {
-            setInputError(inputElement, "Username must be at least 8 Characters long");
+        if (inputElement.value.length > 0 && inputElement.value.length < 6) {
+            setInputError(inputElement, "Username must be at least 6 Characters long");
         }
 
         inputElement.addEventListener("input", e => {
