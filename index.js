@@ -28,6 +28,6 @@ app.use(allowCrossDomain);
 //Route Middlewares
 app.use('/api/user', authRoute);
 app.use('/api/products', productRoute);
-app.listen(3000, () => console.log('Server Up and running'));
+app.listen(8080, () => console.log('Server Up and running'));
 
 
