@@ -11,7 +11,9 @@
   --color-error: #cc3333;
   --color-success: #4bb544;
 }
-
+body {
+  
+}
 .section {
   display: flex;
   min-width: 100vh;
@@ -30,6 +32,8 @@
     var(--color-primary),
     var(--color-secondary)
   );
+  background-image:url(../../images/background2.jpg);
+  background-size: cover;
   padding: 5px;
   justify-content: space-between;
 }
@@ -73,6 +77,7 @@ img:hover {
   color: var(--color-tertiary);
 }
 
+
 .section--hidden {
   display: none;
 }
@@ -82,15 +87,7 @@ img:hover {
   border: 5px solid rgb(68, 68, 68);
   border-radius: 50%;
 }
-#personal{
-  
-}
-#location{
-  
-}
-#settings{
-  
-}
-#bookmarks{
-  
+
+#h11 {
+  filter:saturate(0%);
 }
