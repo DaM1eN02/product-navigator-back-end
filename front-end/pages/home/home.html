@@ -11,7 +11,7 @@
         <script src="home.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnPrAo3X1gma22PWeZztiEwO3ijQAVLmE&callback=initMap&libraries=&v=weekly" async></script>
     </head>
-    <body <img src="../../images/background2.jpg">
+    <body>
         <nav class="bar">
             <div>
                 <img id="icon" src="../../images/Blue.png" alt="Product-Navigator" height="100px" width="100px">
@@ -47,43 +47,85 @@
                 
                 <div class="container">
                     <div class="personal">
-                        <h2>Personal Information</h2>
-                        <h3>Full Name</h3>
+                        <h2 class="h2">Personal Information</h2>
+                        <h3 class="h3">Full Name</h3>
                         <input type="text" class="input" value="Test Tester">
-                        <h3>Birthday</h3>
+                        <h3 class="h3">Birthday</h3>
                         <input type="text" class="input" value="April 30, 2002">
-                        <h3>E-Mail</h3>
+                        <h3 class="h3">E-Mail</h3>
                         <input type="text" class="input" value="example@example.com">
-                        <h3>Password</h3>
+                        <h3 class="h3">Password</h3>
                         <input type="password" class="input" value="Test123!">
                         <button class="btn">Update</button>
                     </div>
                     <div class="location section--hidden">
-                        <h2>Location</h2>
-                        <h3>Your address</h3>
+                        <h2 class="h2">Location</h2>
+                        <h3 class="h3">Your address</h3>
                         <input type="text" class="input" value="Examplestreet 32, 74078 Heilbronn">
-                        <h3>Shops in Vicinity</h3>
+                        <h3 class="h3">Shops in Vicinity</h3>
                         <div id="map"></div>
                     </div>
                     <div class="settings section--hidden">
-                        <h2>Settings</h2>
+                        <h2 class="h2">Settings</h2>
                     </div>
                     <div class="transfers section--hidden">
-                        <h2>Your Recent Transfers</h2>
+                        <h2 class="h2">Your Recent Transfers</h2>
                     </div>
                     <div class="bookmarks section--hidden">
-                        <h2>Your Bookmarks</h2>
+                        <h2 class="h2">Your Bookmarks</h2>
                     </div>
                 </div>
             </section>
             
             <section class="section" id="main">
                 <div class="menu" id="main_menu">
-                    
+                    <div class="markets">
+                        <h3 class="h3" id="market1--title">Title</h3>
+                        <div class="location">
+                            <p>Street + Number</p>
+                            <p>PLZ + City</p>
+                        </div>
+                    </div>
+                    <div class="markets">
+                        <h3 class="h3" id="market2--title">Title</h3>
+                        <div class="location">
+                            <p>Street + Number</p>
+                            <p>PLZ + City</p>
+                        </div>
+                    </div>
+                    <div class="markets">
+                        <h3 class="h3" id="market3--title">Title</h3>
+                        <div class="location">
+                            <p>Street + Number</p>
+                            <p>PLZ + City</p>
+                        </div>
+                    </div>
+                    <div class="markets">
+                        <h3 class="h3" id="market4--title">Title</h3>
+                        <div class="location">
+                            <p>Street + Number</p>
+                            <p>PLZ + City</p>
+                        </div>
+                    </div>
+                    <div class="markets">
+                        <h3 class="h3" id="market5--title">Title</h3>
+                        <div class="location">
+                            <p>Street + Number</p>
+                            <p>PLZ + City</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="container">
+                <div class="container" id="main_container">
+                    <div class="portfolio">
 
+                    </div>
+                    <div class="searchBar">
+                        <input id="searchBar" type="text" placeholder="Search...">
+                    </div>
+                    <div class="productList">
+
+                    </div>
                 </div>
             </section>
         </main>
