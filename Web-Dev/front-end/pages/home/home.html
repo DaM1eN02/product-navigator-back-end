@@ -6,8 +6,10 @@
         <meta name="robots" content="index,follows">
         <title>Product-Navigator</title>
         <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="../../images/Blue.png">
         <script src="home.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnPrAo3X1gma22PWeZztiEwO3ijQAVLmE&callback=initMap&libraries=&v=weekly" async></script>
     </head>
     <body <img src="../../images/background2.jpg">
         <nav class="bar">
@@ -24,53 +26,53 @@
             <section class="section section--hidden" id="user">
                 <div class="menu">
                     <div class="section--selected" id="personal">
-                        <img src="../../images/user.png" alt="Personal Info" height="60" width="60">
+                        <i class="fa fa-user"></i>
                     </div>
 
                     <div id="location">
-                        <img id="location" src="../../images/location.png" alt="Location" height="60" width="60">
+                        <i class="fa fa-location-arrow"></i>
                     </div>
 
                     <div id="settings">
-                        <img id="settings" src="../../images/settings.png" alt="Settings" height="60" width="60">
+                        <i class="fa fa-cogs"></i>
                     </div>
                     
                     <div id="transfers">
-                        <img id="transfers" src="../../images/recent.png" alt="Recent Transfers" height="60" width="60">
+                        <i class="fa fa-exchange"></i>
                     </div>
                     <div id="bookmarks">
-                        <img id="bookmarks" src="../../images/bookmark.png" alt="Bookmarks" height="60" width="60">
+                        <i class="fa fa-bookmark"></i>
                     </div>
                 </div>
                 
                 <div class="container">
                     <div class="personal">
-                        <h1>Personal Information</h1>
-                        <h2>Full Name</h2>
+                        <h2>Personal Information</h2>
+                        <h3>Full Name</h3>
                         <input type="text" class="input" value="Test Tester">
-                        <h2>Birthday</h2>
+                        <h3>Birthday</h3>
                         <input type="text" class="input" value="April 30, 2002">
-                        <h2>E-Mail</h2>
+                        <h3>E-Mail</h3>
                         <input type="text" class="input" value="example@example.com">
-                        <h2>Password</h2>
+                        <h3>Password</h3>
                         <input type="password" class="input" value="Test123!">
                         <button class="btn">Update</button>
                     </div>
                     <div class="location section--hidden">
-                        <h1>Location</h1>
-                        <h2>Your address</h2>
+                        <h2>Location</h2>
+                        <h3>Your address</h3>
                         <input type="text" class="input" value="Examplestreet 32, 74078 Heilbronn">
-                        <h2>Shops in vicinity</h2>
-                        <input type="checkbox" value="Stuttgart">
+                        <h3>Shops in Vicinity</h3>
+                        <div id="map"></div>
                     </div>
                     <div class="settings section--hidden">
-                        <h1>Settings</h1>
+                        <h2>Settings</h2>
                     </div>
                     <div class="transfers section--hidden">
-                        <h1>Your Recent Transfers</h1>
+                        <h2>Your Recent Transfers</h2>
                     </div>
                     <div class="bookmarks section--hidden">
-                        <h1>Your Bookmarks</h1>
+                        <h2>Your Bookmarks</h2>
                     </div>
                 </div>
             </section>

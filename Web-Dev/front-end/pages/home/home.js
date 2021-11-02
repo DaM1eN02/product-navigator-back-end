@@ -136,3 +136,15 @@ function personal() {
 
     document.getElementById("personal").classList.add("section--selected");
 }
+
+function initMap() {
+    const shop = { lat:49.142693, lng: 9.210879 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: shop,
+    });
+    const marker = new google.maps.Marker({
+        position: shop,
+        map: map,
+    });
+}
