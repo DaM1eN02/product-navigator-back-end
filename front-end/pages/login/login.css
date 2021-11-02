@@ -136,7 +136,7 @@ input:focus ~ span {
 }
 
 .form__button {
-  background: rgb(3, 134, 73);
+  background: var(--color-success);
   padding: 2rem;
   border-radius: 1rem;
   border-bottom-left-radius: 2rem;
