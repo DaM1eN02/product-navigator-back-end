@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then((response) => {
                 if (response.ok) {
-                    setFormMessage(loginForm, "success", "You are registered!");
+                    setFormMessage(registerForm, "success", "You are registered!");
                     window.location.href = "../home/home.html";
                 } else {
-                    setFormMessage(loginForm, "error", "Username or Email are already registered!");
+                    setFormMessage(registerForm, "error", "Username or Email are already registered!");
                 }
             })
             .catch((error) => {
