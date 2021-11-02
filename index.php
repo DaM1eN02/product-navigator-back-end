@@ -1,1 +1,1 @@
-<?php header('Location: /Web-Dev/front-end/pages/login/login.html');?>
+<?php header('Location: /front-end/pages/login/login.html');?>
