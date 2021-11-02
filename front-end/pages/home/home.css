@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, var(--color-primary-dark), var(--color-selected));
+  background: rgb(161, 210, 255);
   border-radius: 2rem;
   top: 0;
   height: 86.8vh;
@@ -50,6 +50,7 @@
   margin: 1rem;
   padding: 2rem;
   box-shadow: 3px 10px 20px rgba(119,119,119,.5);
+  border: solid var(--color-secondary);
 }
 
 .menu {
@@ -57,7 +58,7 @@
   display: block;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to left, var(--color-primary-dark), var(--color-selected));
+  background: rgb(161, 210, 255);
   border-radius: 2rem;
   top: 0;
   height: 86.8vh;
@@ -68,6 +69,7 @@
   transition: all .3s ease-in-out;
   font-size: 2em;
   color: rgb(48, 48, 48);
+  border: solid var(--color-secondary);
 }
 
 .container {
