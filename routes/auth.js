@@ -1,5 +1,6 @@
 const router                                    = require ('express').Router();
 const User                                      = require ('../model/user');
+const Product                                   = require ('../model/user');
 const {registerValidation, loginValidation }    = require ('../validation');
 const bcrypt                                    = require ('bcrypt');
 const jwt                                       = require ('jsonwebtoken');
@@ -90,14 +91,12 @@ router.post('/update', async (req, res) => {
         {
             email:      req.body.email,
             password:   req.body.password,
-        
+            street:     req.body.street,
+            city:       req.body.city,
     });
 
     res.send({message: 'Data Updated'});
 });
-
-
-
 
 
 module.exports = router;

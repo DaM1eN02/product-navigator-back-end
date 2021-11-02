@@ -22,8 +22,15 @@ const userSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    street: {
+        type: String,
+        max:255,
+    },
+    city: {
+        type: String,
+        max:255
     }
 });
-
 
 module.exports = mongoose.model('User', userSchema);
