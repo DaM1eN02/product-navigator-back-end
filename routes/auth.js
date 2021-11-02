@@ -8,6 +8,7 @@ const { access } = require('fs');
 const { allow } = require('@hapi/joi');
 
 
+//Register
 router.post('/register', async (req, res) => {
 
     //LETS VALIDATE TGHE DATA BEFORE WE MAKE A USER
@@ -15,7 +16,6 @@ router.post('/register', async (req, res) => {
     if(error) return res.status(400).send(error.details[0].message);
 
     //CHECK IF USER IS IN DATABASE
-
     const emailExist = await User.findOne({email: req.body.email });
     if(emailExist) return res.status(400).send('Email already exists');
 
@@ -23,28 +23,27 @@ router.post('/register', async (req, res) => {
     if(nameExist) return res.status(400).send('Username already exists');
 
     //HASH THE PASSWORD
-
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-//Create new User
-
-  const user = new User({
+    //Create new User
+    const user = new User({
         name:   req.body.name,
         email:  req.body.email,
         password: hashedPassword
     });
-//CATCH THE ERROR
+
+    //CATCH THE ERROR
     try {
         const savedUser = await user.save();
         res.send(savedUser);
-    }  catch(err){
+        }  catch(err){
         res.status(400).send(err);
-    }
- });
+        }
+});
+
 
 //Login
-
 router.post('/login', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
@@ -61,19 +60,18 @@ router.post('/login', async (req, res) => {
         res.status(400);
         return res.send({message: 'Email ist not found'});
     }
+
     //PASSWORD IS CORRECT
     const validPass = await bcrypt.compare(req.body.password, user.password);
     if(!validPass) {
         res.status(400);
         return res.send({message: 'Invalid password'});
     }
-
     res.send({message: 'Logged in!'});
 });
 
 
 //UPDATE DATA
-
 router.post('/update', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
@@ -84,8 +82,9 @@ router.post('/update', async (req, res) => {
         res.status(400);
         return res.send({message: 'Username ist not found'});
     }
-
-    const user2 = await User.findOneAndUpdate({
+    //Find and update user
+    const user2 = await User.findOneAndUpdate(
+        {
             name: req.body.name,
         },
         {
@@ -93,11 +92,9 @@ router.post('/update', async (req, res) => {
             password:   req.body.password,
             street:     req.body.street,
             city:       req.body.city,
-    });
-
+        });
     res.send({message: 'Data Updated'});
 });
-
 
 module.exports = router;
  
