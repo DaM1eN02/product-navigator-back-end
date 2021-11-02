@@ -4,10 +4,11 @@
   font-family: "Gill Sans MT";
 
   --color-primary: #ffffff;
-  --color-primary-dark: #d4d4d4;
+  --color-primary-dark: #f1f1f1;
   --color-secondary: #51c6f5;
   --color-secondary2: #69c9f0;
   --color-secondary3: #2c8aaf;
+  --color-secondary4: #B0edff;
   --color-tertiary: blue;
   --color-selected: rgb(207, 207, 207);
   --color-error: #cc3333;
@@ -18,7 +19,7 @@
   min-width: 100vh;
   min-height: 88.6vh;
   font-size: 18px;
-  background: var(--color-primary);
+  background: var(--color-secondary4);
 }
 
 .bar {
@@ -42,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(161, 210, 255);
+  background: var(--color-primary-dark);
   border-radius: 2rem;
   top: 0;
   height: 86.8vh;
@@ -50,7 +51,7 @@
   margin: 1rem;
   padding: 2rem;
   box-shadow: 3px 10px 20px rgba(119,119,119,.5);
-  border: solid var(--color-secondary);
+  border: solid var(--color-secondary3);
 }
 
 .menu {
@@ -58,7 +59,7 @@
   display: block;
   align-items: center;
   justify-content: center;
-  background: rgb(161, 210, 255);
+  background: var(--color-primary-dark);
   border-radius: 2rem;
   top: 0;
   height: 86.8vh;
@@ -69,7 +70,7 @@
   transition: all .3s ease-in-out;
   font-size: 2em;
   color: rgb(48, 48, 48);
-  border: solid var(--color-secondary);
+  border: solid var(--color-secondary3);
 }
 
 .container {
@@ -167,5 +168,6 @@ h3 {
 #map {
   height: 400px;
   width: 400px;
+  border: solid 1px var(--color-secondary3);
 }
 
