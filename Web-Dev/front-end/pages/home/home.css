@@ -11,9 +11,6 @@
   --color-error: #cc3333;
   --color-success: #4bb544;
 }
-body {
-  
-}
 .section {
   display: flex;
   min-width: 100vh;
@@ -86,8 +83,4 @@ img:hover {
   font-weight: bold;
   border: 5px solid rgb(68, 68, 68);
   border-radius: 50%;
-}
-
-#h11 {
-  filter:saturate(0%);
 }
