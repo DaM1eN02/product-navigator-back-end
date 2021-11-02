@@ -19,7 +19,7 @@ main {
   justify-content: center;
   font-size: 18px;
   background: var(--color-primary);
-  background-image:url(../../images/background2.jpg);
+  background-image: url(../../images/background2.jpg);
   background-size: cover;
 }
 
@@ -120,7 +120,7 @@ input {
   background: transparent;
   font-size: 1rem;
   text-indent: 0.625rem;
-  transition: all 0.35s;
+  transition: all 0.5s;
 }
 
 input::placeholder {

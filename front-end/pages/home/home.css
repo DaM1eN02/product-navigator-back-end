@@ -14,12 +14,16 @@
   --color-error: #cc3333;
   --color-success: #4bb544;
 }
+
+html {
+  font-size: 18px;
+}
+
 .section {
   display: flex;
   min-width: 100vh;
   min-height: 88.6vh;
-  background: var(--color-primary);
-  font-size: 18px;
+  background: var(--color-secondary4);
 }
 
 .bar {
@@ -56,41 +60,24 @@
 }
 
 .menu {
-  z-index: 1;
-  display: block;
+  display: grid;
   align-items: center;
   justify-content: center;
-  background: var(--color-primary-dark);
-  border-radius: 2rem;
-  top: 0;
-  height: 86.8vh;
-  min-height: 86.8vh;
-  margin: 1rem;
-  padding: 2rem;
-  box-shadow: 3px 10px 20px rgba(119, 119, 119, 0.5);
-  transition: all 0.3s ease-in-out;
-  font-size: 2em;
   color: rgb(48, 48, 48);
-  border: solid var(--color-secondary3);
+  left: 0;
+  width: 25%;
+  min-width: 25%;
 }
 
 .container {
   right: 0;
   width: 70%;
   min-width: 70%;
-  font-size: 2rem;
   color: rgb(48, 48, 48);
 }
 
-.menu {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  width: 25%;
-  min-width: 25%;
-  font-size: 2rem;
-  color: rgb(48, 48, 48);
+#user_menu {
+  font-size: 4rem;
 }
 
 #main_menu {
@@ -118,7 +105,8 @@
 i:hover {
   cursor: pointer;
   color: var(--color-success);
-  transform: scale(1.2);
+  transform: scale(1.4);
+  transition: all 0.5s;
 }
 
 i:active {
