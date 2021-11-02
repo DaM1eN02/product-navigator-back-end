@@ -16,7 +16,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .section {
@@ -178,17 +178,45 @@ img:active {
   justify-content: left;
 }
 
-.portfolio,
-.searchBar,
-.productList {
-  width: 100%;
-  background: var(--color-secondary3);
-  border-radius: 2rem;
+.searchBar {
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  padding: 0.625rem;
 }
 
-#searchBar {
-  padding: 0.5rem;
+.searchBar:hover > .searchText {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBar:hover > .searchButton {
+  background: white;
+}
+
+.searchButton {
+  color: var(--color-secondary);
+  float: right;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-secondary4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.searchText {
   border: none;
+  border-radius: 2rem;
+  background: var(--color-secondary2);
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  transition: all 0.5s;
+  line-height: 2.5rem;
+  width: 0px;
 }
 
 .section--hidden {
