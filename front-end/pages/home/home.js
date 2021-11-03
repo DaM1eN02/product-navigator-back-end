@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
         personal();
     });
 
-    document.querySelector("#personal").addEventListener("click", () => {
+    document.querySelector("#personal").addEventListener("mouseover", () => {
         personal();
     });
 
-    document.querySelector("#location").addEventListener("click", () => {
+    document.querySelector("#location").addEventListener("mouseover", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("location").classList.add("section--selected");
     });
 
-    document.querySelector("#settings").addEventListener("click", () => {
+    document.querySelector("#settings").addEventListener("mouseover", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("settings").classList.add("section--selected");
     });
 
-    document.querySelector("#transfers").addEventListener("click", () => {
+    document.querySelector("#transfers").addEventListener("mouseover", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("transfers").classList.add("section--selected");
     });
 
-    document.querySelector("#bookmarks").addEventListener("click", () => {
+    document.querySelector("#bookmarks").addEventListener("mouseover", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
