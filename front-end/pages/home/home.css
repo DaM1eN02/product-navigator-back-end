@@ -87,7 +87,7 @@ html {
 }
 
 .markets {
-  background: var(--color-secondary3);
+  background: var(--color-secondary2);
   width: 100%;
   height: auto;
   margin: 1rem;
@@ -132,6 +132,7 @@ img:active {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(94, 94, 94);
+  margin-bottom: .1rem;
 }
 
 .input {
@@ -168,8 +169,8 @@ img:active {
 }
 
 #map {
-  height: 400px;
-  width: 400px;
+  height: 20rem;
+  width: 200%;
   border: solid 1px var(--color-secondary3);
 }
 
@@ -213,7 +214,7 @@ img:active {
   outline: none;
   float: left;
   padding: 0;
-  color: white;
+  color: rgb(48, 48, 48);
   transition: all 0.5s;
   line-height: 2.5rem;
   width: 0px;
