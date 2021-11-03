@@ -10,9 +10,9 @@ router.post('/addProduct', async (req, res) => {
     //Checking if the email exist
     const productExist = await Product.findOne({name: req.body.name });
     if(productExist) return res.status(400).send({message:'Product already exists'});
-
+    
     //Create new product
-    const product2 = new Product(
+    const product = new Product(
         {
         name:   req.body.name,
         price:  req.body.price,
@@ -41,7 +41,7 @@ router.post('/updateProduct', async (req, res) => {
         return res.send({message: 'Product is not found'});
     }
 
-    const product2 = await Product.findOneAndUpdate(
+    product = await Product.findOneAndUpdate(
         {
             name: req.body.name,
         },
@@ -49,7 +49,7 @@ router.post('/updateProduct', async (req, res) => {
             price:              req.body.price,          
             nutritionalValues:  req.body.nutritionalValues
         });
-    res.send({message: 'Product Updated'});
+    res.send({message: 'Product updated'});
 });
 
 module.exports = router;

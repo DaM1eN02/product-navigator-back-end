@@ -67,7 +67,8 @@ router.post('/login', async (req, res) => {
         res.status(400);
         return res.send({message: 'Invalid password'});
     }
-    res.send({message: 'Logged in!'});
+    res.send(
+        {message: 'Logged in!'});
 });
 
 
@@ -89,7 +90,7 @@ router.post('/update', async (req, res) => {
         },
         {
             email:      req.body.email,
-            password:   req.body.password,
+            password:   hashedPassword,
             street:     req.body.street,
             city:       req.body.city,
         });
