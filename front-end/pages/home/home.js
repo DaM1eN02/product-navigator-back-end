@@ -202,13 +202,13 @@ function personal() {
 }
 
 function initMap() {
-    const shop = { lat:49.142693, lng: 9.210879 };
+    const pos = { lat:49.142693, lng: 9.210879 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
-        center: shop,
+        center: pos,
     });
     const marker = new google.maps.Marker({
-        position: shop,
+        position: pos,
         map: map,
     });
 }
