@@ -132,7 +132,7 @@ img:active {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(94, 94, 94);
-  margin-bottom: .1rem;
+  margin-bottom: 0.1rem;
 }
 
 .input {
@@ -155,7 +155,8 @@ img:active {
   padding: 7px 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   letter-spacing: 1px;
 }
 
@@ -220,10 +221,32 @@ img:active {
   width: 0px;
 }
 
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .section--hidden {
   display: none;
 }
 
 .section--selected {
   color: var(--color-success);
+}
+
+.form__message {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form__message--success {
+  color: var(--color-success);
+}
+
+.form__message--error {
+  color: var(--color-error);
 }
