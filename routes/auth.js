@@ -88,9 +88,11 @@ router.post('/update', async (req, res) => {
         res.status(400);
         return res.send({message: 'Username ist not found'});
     }
-    //HASH THE PASSWORD
+
+    //Hash the password
+
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     //Find and update user
     const user2 = await User.findOneAndUpdate(
