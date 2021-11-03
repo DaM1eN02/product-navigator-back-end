@@ -91,7 +91,7 @@ router.post('/update', async (req, res) => {
             email:      req.body.email,
             password:   req.body.password,
             street:     req.body.street,
-            city:       req.body.city,
+            city:       req.body.city
         });
     res.send({message: 'Data Updated'});
 });
