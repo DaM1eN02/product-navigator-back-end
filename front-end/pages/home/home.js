@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
         personal();
     });
 
-    document.querySelector("#personal").addEventListener("mouseover", () => {
+    document.querySelector("#personal").addEventListener("click", () => {
         personal();
     });
 
-    document.querySelector("#location").addEventListener("mouseover", () => {
+    document.querySelector("#location").addEventListener("click", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("location").classList.add("section--selected");
     });
 
-    document.querySelector("#settings").addEventListener("mouseover", () => {
+    document.querySelector("#settings").addEventListener("click", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("settings").classList.add("section--selected");
     });
 
-    document.querySelector("#transfers").addEventListener("mouseover", () => {
+    document.querySelector("#transfers").addEventListener("click", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("transfers").classList.add("section--selected");
     });
 
-    document.querySelector("#bookmarks").addEventListener("mouseover", () => {
+    document.querySelector("#bookmarks").addEventListener("click", () => {
         userProfile_personal.classList.remove("section--hidden");
         userProfile_location.classList.remove("section--hidden");
         userProfile_settings.classList.remove("section--hidden");
@@ -226,4 +226,12 @@ function removeFormMessage(formElement) {
 
     messageElement.textContent = "";
     messageElement.classList.remove("form__message--success", "form__message--error");
+}
+
+function setUserData(name, email, password, city, street) {
+    document.getElementById('username').value = name;
+    document.getElementById('email').value = email;
+    document.getElementById('password').value = password;
+    document.getElementById('city').value = city;
+    document.getElementById('street').value = street;
 }

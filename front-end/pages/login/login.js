@@ -47,15 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(LoginData),
         })
-        .then((response) => {
-            if (response.ok) {
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.result = 'true') {
                 setFormMessage(loginForm, "success", "You are logged in!");
+                setUserData(data.name, data.email, data.password, data.city, data.street);
                 window.location.href = "../home/home.html";
-            } else {
+            }
+            if (data.result = 'false') {
                 setFormMessage(loginForm, "error", "Incorrect Username or Password!");
             }
         })
-        .catch((error) => {
+        .catch(function (error) {
             console.log(error);
         });
     });
@@ -82,15 +87,20 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(RegisterData),
             })
-            .then((response) => {
-                if (response.ok) {
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.result = 'true') {
                     setFormMessage(registerForm, "success", "You are registered!");
+                    setUserData(data.name, data.email, data.password, data.city, data.street);
                     window.location.href = "../home/home.html";
-                } else {
+                }
+                if (data.result = 'false') {
                     setFormMessage(registerForm, "error", "Username or Email are already registered!");
                 }
             })
-            .catch((error) => {
+            .catch(function (error) {
                 console.log(error);
             });
         } else {
