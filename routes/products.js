@@ -80,19 +80,16 @@ router.post('/searchProduct', async (req, res) => {
             { "$match": {
                 "products": { "$regex": req.body.name, "$options": "i" }
             }},
-    
-            // Group back as an array with only the matching elements
-            { "$group": 
-            {
-                "_id":               "$_id",
-                "name":             "$name",
-                "price":            "$price",
-                "kcal":             "$kcal",
-                "fat":              "$fat",
-                "carbohydrate":     "$carbohydrate",
-                "protein":          "$protein",
-                "salt":             "$salt",
-                "location":         "$location"
+            { "$group": {
+                "_id": "$_id",
+                "name": {"$first": "$name"},
+                "price": {"$first": "$price"},
+                "kcal": {"$first": "$kcal"},
+                "fat": {"$first": "$fat"},
+                "carbohydrate": {"$first": "$carbohydrate"},
+                "protein": {"$first": "$protein"},
+                "salt": {"$first": "$salt"},
+                "location": {"$first": "$location"}
             }}
         ],
         function(err,results) {
