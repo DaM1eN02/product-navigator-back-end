@@ -11,7 +11,27 @@ const productSchema = new mongoose.Schema({
         required: true,
         max: 255
     },
-    nutritionalValues:{
+    kcal:{
+        type: String,
+        required: true,
+        max: 255
+    },
+    fat:{
+        type: String,
+        required: true,
+        max: 255
+    },
+    carbohydrate:{
+        type: String,
+        required: true,
+        max: 255
+    },
+    protein:{
+        type: String,
+        required: true,
+        max: 255
+    },
+    salt:{
         type: String,
         required: true,
         max: 255

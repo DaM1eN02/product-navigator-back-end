@@ -1,6 +1,7 @@
 const router        = require('express').Router();
 const verify        = require('./verifyToken');
 const Product       = require ('../model/product');
+const product = require('../model/product');
 
 //Add a product
 router.post('/addProduct', async (req, res) => {
@@ -14,9 +15,15 @@ router.post('/addProduct', async (req, res) => {
     //Create new product
     const product = new Product(
         {
-        name:   req.body.name,
-        price:  req.body.price,
-        nutritionalValues: req.body.nutritionalValues
+        name:               req.body.name,
+        price:              req.body.price,          
+        kcal:               req.body.kcal,
+        fat:                req.body.fat,
+        carbohydrate:       req.body.carbohydrate,            
+        protein:            req.body.protein,
+        salt:               req.body.salt,
+        location:           req.body.location
+        
         });
 
     //CATCH THE ERROR
@@ -41,15 +48,27 @@ router.post('/updateProduct', async (req, res) => {
         return res.send({message: 'Product is not found'});
     }
 
-    product = await Product.findOneAndUpdate(
+    const product2 = await Product.findOneAndUpdate(
         {
             name: req.body.name,
         },
         {
             price:              req.body.price,          
-            nutritionalValues:  req.body.nutritionalValues
+            kcal:               req.body.kcal,
+            fat:                req.body.fat,
+            carbohydrate:       req.body.carbohydrate,
+            protein:            req.body.protein,
+            salt:               req.body.salt,
+            location:           req.body.location
+
         });
     res.send({message: 'Product updated'});
 });
+
+router.post('/searchProduct', async (req, res) => {
+    const product = await product.findOne();
+    res.send({product});
+});
+
 
 module.exports = router;
