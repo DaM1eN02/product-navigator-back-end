@@ -26,10 +26,12 @@ const userSchema = new mongoose.Schema({
     street: {
         type: String,
         max:255,
+        default: ""
     },
     city: {
         type: String,
-        max:255
+        max:255,
+        default: ""
     }
 });
 

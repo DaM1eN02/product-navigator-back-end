@@ -109,16 +109,19 @@ router.post('/login', async (req, res) => {
         });
     }
 
+    const user2 = await User.findOne({
+        email: req.body.email});
+
     res.send({
-        name: req.body.name,
-        email: req.body.email,
-        password:req.body.password,
-        city: req.body.city,
-        street: req.body.street,
-        result: 'true',
-        message: 'You are logged in!'
+        name:       user2.name,
+        password:   req.body.password,
+        id:         user2._id,
+        email:      req.body.email,
+        city:       user2.city,
+        street:     user2.street,
+        result:     'true',
+        message:    'You are Logged In'
     });
-});
 
 
 //UPDATE DATA
@@ -157,7 +160,5 @@ router.post('/update', async (req, res) => {
         message: 'User Data is updated'
     });
 });
-
+});
 module.exports = router;
- 
- 
