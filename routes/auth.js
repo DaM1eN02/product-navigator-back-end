@@ -55,6 +55,7 @@ router.post('/register', async (req, res) => {
     try {
         const savedUser = await user.save();
         res.send({
+            id: _id,
             name: req.body.name,
             email: req.body.email,
             passowrd: req.body.password,

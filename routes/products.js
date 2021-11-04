@@ -66,9 +66,41 @@ router.post('/updateProduct', async (req, res) => {
 });
 
 router.post('/searchProduct', async (req, res) => {
-    const product = await product.findOne();
-    res.send({product});
+     const products = await Product.aggregate(
+        [
+            // Match first to reduce documents to those where the array contains the match
+            { "$match": {
+                "products": { "$regex": req.body.name, "$options": "i" }
+            }},
+    
+            // Unwind to "de-normalize" the document per array element
+            { "$unwind": "$products" },
+    
+            // Now filter those document for the elements that match
+            { "$match": {
+                "products": { "$regex": req.body.name, "$options": "i" }
+            }},
+    
+            // Group back as an array with only the matching elements
+            { "$group": 
+            {
+                "_id":               "$_id",
+                "name":             "$name",
+                "price":            "$price",
+                "kcal":             "$kcal",
+                "fat":              "$fat",
+                "carbohydrate":     "$carbohydrate",
+                "protein":          "$protein",
+                "salt":             "$salt",
+                "location":         "$location"
+            }}
+        ],
+        function(err,results) {
+            res.send(results)
+        } 
+    )
 });
+
 
 
 module.exports = router;
