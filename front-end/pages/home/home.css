@@ -185,11 +185,6 @@ img:active {
   border: solid 1px var(--color-secondary3);
 }
 
-#main_container {
-  display: grid;
-  justify-content: left;
-}
-
 .searchBar {
   height: 2.5rem;
   border-radius: 2.5rem;
@@ -250,8 +245,4 @@ img:active {
 
 .form__message--error {
   color: var(--color-error);
-}
-
-#mainmarket {
-  
 }
