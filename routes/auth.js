@@ -22,7 +22,9 @@ router.post('/register', async (req, res) => {
     }
 
     //CHECK IF USER IS IN DATABASE
-    const emailExist = await User.findOne({email: req.body.email });
+    const emailExist = await User.findOne({
+        email: req.body.email
+    });
     if(emailExist) {
         res.status(400);
         return res.send({
@@ -31,14 +33,16 @@ router.post('/register', async (req, res) => {
         });
     }
 
-    const nameExist = await User.findOne({name: req.body.name});
+    const nameExist = await User.findOne({
+        name: req.body.name
+    });
     if(nameExist) {
         res.status(400);
         return res.send({
             result: 'false',
             message: 'Username already exists'
-        })
-    };
+        });
+    }
 
     //HASH THE PASSWORD
     const salt = await bcrypt.genSalt(10);
@@ -65,7 +69,8 @@ router.post('/register', async (req, res) => {
             result: 'true',
             message: 'You are registered'
         });
-    } catch(err){
+    }
+    catch(err){
         res.send({
             result: 'false',
             message: err

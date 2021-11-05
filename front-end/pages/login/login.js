@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(function (data) {
                 if (data.result == 'true') {
+                    console.log(data);
                     setFormMessage(registerForm, "success", "You are registered!");
                     window.location = "../home/home.html?name="+data.name+"&birthday="+data.birthday+"&email="+data.email+"&password="+data.password+"&city="+data.city+"&street="+data.street;
                 }
