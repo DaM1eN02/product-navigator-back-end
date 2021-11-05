@@ -66,36 +66,40 @@ router.post('/updateProduct', async (req, res) => {
 });
 
 router.post('/searchProduct', async (req, res) => {
-     const products = await Product.aggregate(
-        [
-            // Match first to reduce documents to those where the array contains the match
-            { "$match": {
-                "products": { "$regex": req.body.name, "$options": "i" }
-            }},
-    
-            // Unwind to "de-normalize" the document per array element
-            { "$unwind": "$products" },
-    
-            // Now filter those document for the elements that match
-            { "$match": {
-                "products": { "$regex": req.body.name, "$options": "i" }
-            }},
-            { "$group": {
-                "_id": "$_id",
-                "name": {"$first": "$name"},
-                "price": {"$first": "$price"},
-                "kcal": {"$first": "$kcal"},
-                "fat": {"$first": "$fat"},
-                "carbohydrate": {"$first": "$carbohydrate"},
-                "protein": {"$first": "$protein"},
-                "salt": {"$first": "$salt"},
-                "location": {"$first": "$location"}
-            }}
-        ],
-        function(err,results) {
-            res.send(results)
-        } 
-    )
+    const products = await Product.aggregate([{
+        "$match": {
+            "products": {
+                "$regex": req.body.name, "$options": "i"
+            }
+        }
+    },
+    {
+        "$unwind": "$products"
+    },
+    {
+        "$match": {
+            "products": {
+                "$regex": req.body.name, "$options": "i"
+            }
+        }
+    },
+    {
+        "$group": {
+            "_id": "$_id",
+            "name": {"$first": "$name"},
+            "price": {"$first": "$price"},
+            "kcal": {"$first": "$kcal"},
+            "fat": {"$first": "$fat"},
+            "carbohydrate": {"$first": "$carbohydrate"},
+            "protein": {"$first": "$protein"},
+            "salt": {"$first": "$salt"},
+            "location": {"$first": "$location"}
+        }
+    }
+    ],
+    function(err,results) {
+        res.send(results);
+    });
 });
 
 

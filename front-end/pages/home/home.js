@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         main.classList.remove("section--hidden");
         main.classList.add("section--hidden");
         personal();
+        setUserData();
     });
 
     document.querySelector("#personal").addEventListener("click", () => {
@@ -228,10 +229,20 @@ function removeFormMessage(formElement) {
     messageElement.classList.remove("form__message--success", "form__message--error");
 }
 
-function setUserData(name, email, password, city, street) {
-    document.getElementById('username').value = name;
-    document.getElementById('email').value = email;
-    document.getElementById('password').value = password;
-    document.getElementById('city').value = city;
-    document.getElementById('street').value = street;
+function setUserData() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+
+    try {
+        document.getElementById('username').value = vars['name'];
+        document.getElementById('email').value = vars['email'];
+        document.getElementById('password').value = vars['password'];
+        document.getElementById('city').value = vars['city'];
+        document.getElementById('street').value = vars['street'];
+    }
+    catch(err) {
+        console.log(err);
+    }
 }

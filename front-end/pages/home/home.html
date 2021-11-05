@@ -46,30 +46,52 @@
                     </div>
                 </div>
                 
-                <div class="container">
+                <div class="container" id="user_container">
                     <form class="personal">
-                        <h2 class="h2">Personal Information</h2>
-                        <h3 class="h3">Full Name</h3>
-                        <input type="text" class="input unselectable" id="username" value="Test Tester">
-                        <h3 class="h3">Birthday</h3>
-                        <input type="text" class="input unselectable" id="birthday" value="April 30, 2002">
-                        <h3 class="h3">E-Mail</h3>
-                        <input type="text" class="input" id="email" value="example@example.com">
-                        <h3 class="h3">Password</h3>
-                        <input type="password" class="input" id="password" value="Test123!">
+                        <h2 class="h2">
+                            Personal Information
+                        </h2>
+                        <h3 class="h3">
+                            Full Name
+                        </h3>
+                        <textarea class="input" id="username" cols="30" rows="1" readonly style="resize: none;"></textarea>
+                        <h3 class="h3">
+                            Birthday
+                        </h3>
+                        <textarea class="input" id="birthday" cols="30" rows="1" readonly style="resize: none;"></textarea>
+                        <h3 class="h3">
+                            E-Mail
+                        </h3>
+                        <textarea class="input" id="email" cols="30" rows="1" style="resize: none;"></textarea>
+                        <h3 class="h3">
+                            Password
+                        </h3>
+                        <textarea class="input" id="password" cols="30" rows="1" style="resize: none;"></textarea>
                         <div class="form__message form__message--error"></div>
-                        <button class="btn" id="userupdate">Update</button>
+                        <button class="btn" id="userupdate">
+                            Update
+                        </button>
                     </form>
 
                     <form class="location section--hidden">
-                        <h2 class="h2">Location</h2>
-                        <h3 class="h3">City</h3>
-                        <input type="text" class="input" id="city" value="74078 Heilbronn">
-                        <h3 class="h3">Street</h3>
-                        <input type="text" class="input" id="street" value="Examplestreet 32">
+                        <h2 class="h2">
+                            Location
+                        </h2>
+                        <h3 class="h3">
+                            City
+                        </h3>
+                        <textarea class="input" id="city" cols="30" rows="1" style="resize: none;"></textarea>
+                        <h3 class="h3">
+                            Street
+                        </h3>
+                        <textarea class="input" id="street" cols="30" rows="1" style="resize: none;"></textarea>
                         <div class="form__message form__message--error"></div>
-                        <button class="btn" id="locationupdate">Update</button>
-                        <h3 class="h3">Shops in Vicinity</h3>
+                        <button class="btn" id="locationupdate">
+                            Update
+                        </button>
+                        <h3 class="h3">
+                            Shops in Vicinity
+                        </h3>
                         <div id="map"></div>
                     </form>
 

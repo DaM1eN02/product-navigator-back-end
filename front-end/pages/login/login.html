@@ -4,11 +4,10 @@
         <meta charset="UTF-8" content="text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="index,follows">
-        <title>Product-Navigator</title>
+        <title>Log In / Register</title>
         <link rel="stylesheet" href="login.css">
         <link rel="icon" href="../../images/Blue.png">
-        <script src="../home/home.js"></script>
-        <script src="login.js"></script>
+        <script src="login.js" type="module"></script>
     </head>
     <body>
         <main>
@@ -22,7 +21,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="LoginUsername" type="text" placeholder="E-Mail . . .">
+                            <input id="LoginUsername" type="text" placeholder="E-Mail . . ." autocomplete="email">
                             <span>E-Mail</span>
                         </div>
                         <div class="form__input-error-message"></div>
@@ -30,7 +29,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="LoginPassword" type="password" placeholder="Password . . .">
+                            <input id="LoginPassword" type="password" placeholder="Password . . ." autocomplete="current-password">
                             <span>Password</span>
                         </div>
                         <div class="form__input-error-message"></div>
@@ -54,7 +53,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="RegisterUsername" type="text" placeholder="Your Username . . .">
+                            <input id="RegisterUsername" type="text" placeholder="Your Username . . ." autocomplete="nickname">
                             <span>Username</span>
                         </div>
                         <div class="form__input-error-message"></div>
@@ -62,7 +61,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="RegisterEmail" type="email" placeholder="Your E-Mail . . .">
+                            <input id="RegisterEmail" type="email" placeholder="Your E-Mail . . ." autocomplete="email">
                             <span>E-Mail</span>
                         </div>
                         <div class="form__input-error-message"></div>
@@ -70,7 +69,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="RegisterPassword1" type="password" placeholder="Your Password . . .">
+                            <input id="RegisterPassword1" type="password" placeholder="Your Password . . ." autocomplete="new-password">
                             <span>Password</span>
                         </div>
                         <div class="form__input-error-message"></div>
@@ -78,7 +77,7 @@
 
                     <div class="form__inputFields">
                         <div class="form__input">
-                            <input id="RegisterPassword2" type="password" placeholder="Confirm Password . . .">
+                            <input id="RegisterPassword2" type="password" placeholder="Confirm Password . . ." autocomplete="new-password">
                             <span>Confirm Password</span>
                         </div>
                         <div class="form__input-error-message"></div>
