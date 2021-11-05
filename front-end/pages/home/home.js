@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             birthday: birthday
         };
 
-        fetch("http://localhost:3000/api/user/update", {
+        fetch("https://product-navigator-back-end.herokuapp.com/api/user/update", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             city: city
         };
 
-        fetch("http://localhost:3000/api/user/update", {
+        fetch("https://product-navigator-back-end.herokuapp.com/api/user/update", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

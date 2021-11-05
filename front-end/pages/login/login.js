@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
-        fetch("http://localhost:3000/api/user/login", {
+        fetch("https://product-navigator-back-end.herokuapp.com/api/user/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 password: password1
             };
 
-            fetch("http://localhost:3000/api/user/register", {
+            fetch("https://product-navigator-back-end.herokuapp.com/api/user/register", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
