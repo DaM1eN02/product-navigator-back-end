@@ -116,11 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let username = document.getElementById('username').value;
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
+        let birthday = document.getElementById('birthday').value;
 
         const personalUpdate = {
             name: username,
             email: email,
-            password: password
+            password: password,
+            birthday: birthday
         };
 
         fetch("http://localhost:3000/api/user/update", {
@@ -237,6 +239,7 @@ function setUserData() {
 
     try {
         document.getElementById('username').value = vars['name'];
+        document.getElementById('birthday').value = vars['birthday'];
         document.getElementById('email').value = vars['email'];
         document.getElementById('password').value = vars['password'];
         document.getElementById('city').value = vars['city'];

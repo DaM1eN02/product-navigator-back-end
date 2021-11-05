@@ -61,6 +61,7 @@ router.post('/register', async (req, res) => {
             password: req.body.password,
             city: '',
             street: '',
+            birthday: '2000-01-01',
             result: 'true',
             message: 'You are registered'
         });
@@ -120,6 +121,7 @@ router.post('/login', async (req, res) => {
         id: user2._id,
         city: user2.city,
         street: user2.street,
+        birthday: user2.birthday,
         result: 'true',
         message: 'You are Logged In'
     });
@@ -154,7 +156,8 @@ router.post('/update', async (req, res) => {
             email:      req.body.email,
             password:   hashedPassword,
             street:     req.body.street,
-            city:       req.body.city
+            city:       req.body.city,
+            birthday:   req.body.birthday
         });
     res.send({
         result: 'true',

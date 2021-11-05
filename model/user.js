@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         max:255,
         default: ''
+    },
+    birthday: {
+        type: String,
+        default: "2000-01-01"
     }
 });
 

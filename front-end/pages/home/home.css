@@ -97,6 +97,16 @@ html {
   margin-right: auto;
 }
 
+.personal,
+.location,
+.settings,
+.transfers,
+.bookmarks {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 .bar > div {
   display: flex;
   align-items: center;

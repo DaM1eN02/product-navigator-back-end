@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(function (data) {
             if (data.result == 'true') {
                 setFormMessage(loginForm, "success", "You are logged in!");
-                // setUserData(data.name, data.email, data.password, data.city, data.street);
-                window.location = "../home/home.html?name="+data.name+"&email="+data.email+"&password="+data.password+"&city="+data.city+"&street="+data.street;
+                window.location = "../home/home.html?name="+data.name+"&birthday="+data.birthday+"&email="+data.email+"&password="+data.password+"&city="+data.city+"&street="+data.street;
             }
             if (data.result == 'false') {
                 setFormMessage(loginForm, "error", "Incorrect Username or Password!");
@@ -93,8 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(function (data) {
                 if (data.result == 'true') {
                     setFormMessage(registerForm, "success", "You are registered!");
-                    setUserData(data.name, data.email, data.password, data.city, data.street);
-                    window.location.href = "../home/home.html";
+                    window.location = "../home/home.html?name="+data.name+"&birthday="+data.birthday+"&email="+data.email+"&password="+data.password+"&city="+data.city+"&street="+data.street;
                 }
                 if (data.result == 'false') {
                     setFormMessage(registerForm, "error", "Username or Email are already registered!");
