@@ -45,9 +45,6 @@ html {
 .menu,
 .container {
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--color-primary-dark);
   border-radius: 2rem;
   top: 0;
@@ -57,6 +54,12 @@ html {
   padding: 2rem;
   box-shadow: 3px 10px 20px rgba(119, 119, 119, 0.5);
   border: solid var(--color-secondary3);
+}
+
+#user_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
@@ -185,19 +188,18 @@ img:active {
   border: solid 1px var(--color-secondary3);
 }
 
-#main_container {
-  display: grid;
-  justify-content: left;
-}
-
 .searchBar {
   height: 2.5rem;
   border-radius: 2.5rem;
   padding: 0.625rem;
+  width: 100%;
+  min-width: 100%;
+  margin: 1rem;
+  margin-left: 0;
 }
 
 .searchBar:hover > .searchText {
-  width: 240px;
+  width: 90%;
   padding: 0 6px;
 }
 
@@ -207,7 +209,7 @@ img:active {
 
 .searchButton {
   color: var(--color-secondary);
-  float: right;
+  float: left;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -231,6 +233,10 @@ img:active {
   width: 0px;
 }
 
+.portfolio {
+  height: 10%;
+}
+
 .section--hidden {
   display: none;
 }
@@ -252,6 +258,6 @@ img:active {
   color: var(--color-error);
 }
 
-#mainmarket {
-  
-}
+
+
+
