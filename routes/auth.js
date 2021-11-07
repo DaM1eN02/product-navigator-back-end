@@ -56,7 +56,7 @@ router.post('/register', async (req, res) => {
     });
 
     //CATCH THE ERROR
-    try {
+    // try {
         const savedUser = await user.save();
         res.send({
             id: _id,
@@ -69,13 +69,13 @@ router.post('/register', async (req, res) => {
             result: 'true',
             message: 'You are registered'
         });
-    }
-    catch(err){
-        res.send({
-            result: 'false',
-            message: 'Error db'
-        });
-    }
+    // }
+    // catch(err){
+    //     res.send({
+    //         result: 'false',
+    //         message: 'Error db'
+    //     });
+    // }
 });
 
 
