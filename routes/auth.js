@@ -10,8 +10,10 @@ const { allow } = require('@hapi/joi');
 
 //Register
 router.post('/register', async (req, res) => {
+    res.contentType('application/json');
+    res.type('json');
 
-    //LETS VALIDATE TGHE DATA BEFORE WE MAKE A USER
+    //LETS VALIDATE THE DATA BEFORE WE MAKE A USER
     const {error} = registerValidation(req.body);
     if(error) {
         res.status(400);
