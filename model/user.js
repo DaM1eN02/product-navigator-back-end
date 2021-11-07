@@ -19,23 +19,19 @@ const userSchema = new mongoose.Schema({
         max: 1024,
         min: 6
     },
-    date: {
-        type: Date,
-        default: Date.now
-    },
     street: {
         type: String,
         max:255,
-        default: ''
+        default: 'Lohrtalweg 10'
     },
     city: {
         type: String,
         max:255,
-        default: ''
+        default: '74821 Mosbach'
     },
     birthday: {
         type: String,
-        default: "2000-01-01"
+        default: '2000-01-01'
     }
 });
 

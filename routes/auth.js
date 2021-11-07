@@ -63,8 +63,8 @@ router.post('/register', async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            city: '',
-            street: '',
+            city: '74821 Mosbach',
+            street: 'Lohrtalweg 10',
             birthday: '2000-01-01',
             result: 'true',
             message: 'You are registered'
