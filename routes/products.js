@@ -83,6 +83,20 @@ router.post('/searchProduct', async (req, res) => {
     res.send(products);
 });
 
+router.post('/searchProductAlexa', async (req, res) => {
+    res.contentType('application/json');
+    res.type('json');
+
+    const products = await Product.find({
+        "name": {
+            "$regex": req.body.name,
+            "$options": "i"
+        }
+    })
+
+    res.send(products);
+});
+
 
 
 module.exports = router;
