@@ -48,8 +48,7 @@ router.post('/updateProduct', async (req, res) => {
         return res.send({message: 'Product is not found'});
     }
 
-    const product2 = await Product.findOneAndUpdate(
-        {
+    const product2 = await Product.findOneAndUpdate({
             name: req.body.name,
         },
         {
@@ -66,40 +65,16 @@ router.post('/updateProduct', async (req, res) => {
 });
 
 router.post('/searchProduct', async (req, res) => {
-    const products = await Product.aggregate([{
-        "$match": {
-            "products": {
-                "$regex": req.body.name, "$options": "i"
-            }
+    res.contentType('application/json');
+    res.type('json');
+    
+    const products = await Product.find({
+        "name": {
+            "$regex": req.body.name
         }
-    },
-    {
-        "$unwind": "$products"
-    },
-    {
-        "$match": {
-            "products": {
-                "$regex": req.body.name, "$options": "i"
-            }
-        }
-    },
-    {
-        "$group": {
-            "_id": "$_id",
-            "name": {"$first": "$name"},
-            "price": {"$first": "$price"},
-            "kcal": {"$first": "$kcal"},
-            "fat": {"$first": "$fat"},
-            "carbohydrate": {"$first": "$carbohydrate"},
-            "protein": {"$first": "$protein"},
-            "salt": {"$first": "$salt"},
-            "location": {"$first": "$location"}
-        }
-    }
-    ],
-    function(err,results) {
-        res.send(results);
-    });
+    })
+
+    res.send(products);
 });
 
 
