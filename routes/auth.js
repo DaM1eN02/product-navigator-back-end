@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
         res.status(400);
         return res.send({
             result: 'false',
-            message: error.details[0].message
+            message: 'Error sending' //error.details[0].message
         });
     }
 
@@ -73,7 +73,7 @@ router.post('/register', async (req, res) => {
     catch(err){
         res.send({
             result: 'false',
-            message: err
+            message: 'Error db'
         });
     }
 });
