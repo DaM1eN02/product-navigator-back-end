@@ -2,6 +2,7 @@ const express   = require('express');
 const app       = express();
 const mongoose  = require ('mongoose');
 const dotenv    = require('dotenv');
+import cors from 'cors';
 
 //Import Routes
 const authRoute = require('./routes/auth');
@@ -25,6 +26,7 @@ const PORT = process.env.PORT || '8080';
 //Middlewares
 app.use(express.json());
 app.use(allowCrossDomain);
+app.use(cors());
 
 //Route Middlewares
 app.use('/api/user', authRoute);
