@@ -21,7 +21,7 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
-const PORT = process.env.PORT || '8080';
+const PORT = '8080';
 
 //Middlewares
 app.use(express.json());
