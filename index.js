@@ -1,7 +1,8 @@
-const express   = require('express');
-const app       = express();
-const mongoose  = require ('mongoose');
-const dotenv    = require('dotenv');
+const express = require('express');
+const app = express();
+const mongoose = require ('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
 
 //Import Routes
 const authRoute = require('./routes/auth');
@@ -12,6 +13,19 @@ dotenv.config();
 //Connect to MongoDB
 mongoose.connect(process.env.DB_CONNECT, {UseNewUrlParser: true },
 () => console.log ('connected to db!'));
+
+const whitelist = ["https://product-navigator.herokuapp.com"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+app.use(cors(corsOptions));
 
 //CrossDomain
 const PORT = '8080';
