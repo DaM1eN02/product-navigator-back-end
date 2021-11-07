@@ -50,16 +50,20 @@ router.post('/register', async (req, res) => {
 
     //Create new User
     const user = new User({
-        name:   req.body.name,
-        email:  req.body.email,
+        name: req.body.name,
+        email: req.body.email,
         password: hashedPassword
     });
 
     //CATCH THE ERROR
-    // try {
+    try {
         const savedUser = await user.save();
+        const dbuser = await User.findOne({
+            email: req.body.email
+        });
+
         res.send({
-            id: _id,
+            id: dbuser._id,
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
@@ -69,13 +73,13 @@ router.post('/register', async (req, res) => {
             result: 'true',
             message: 'You are registered'
         });
-    // }
-    // catch(err){
-    //     res.send({
-    //         result: 'false',
-    //         message: 'Error db'
-    //     });
-    // }
+    }
+    catch(err){
+        res.send({
+            result: 'false',
+            message: 'Error db'
+        });
+    }
 });
 
 
@@ -116,7 +120,8 @@ router.post('/login', async (req, res) => {
     }
 
     const user2 = await User.findOne({
-        email: req.body.email});
+        email: req.body.email
+    });
 
     res.send({
         id: user2._id,
@@ -138,7 +143,10 @@ router.post('/update', async (req, res) => {
     res.type('json');
       
     //Checking if the email exist
-    const user = await User.findOne({name: req.body.name });
+    const user = await User.findOne({
+        name: req.body.name
+    });
+
     if(!user) {
         res.status(400);
         return res.send({
