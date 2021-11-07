@@ -11,7 +11,9 @@ const productRoute = require('./routes/products');
 dotenv.config();
 
 //Connect to MongoDB
-mongoose.connect(process.env.DB_CONNECT, {UseNewUrlParser: true },
+mongoose.connect(process.env.DB_CONNECT, {
+    UseNewUrlParser: true
+},
 () => console.log ('connected to db!'));
 
 const whitelist = ["https://product-navigator.herokuapp.com"]
@@ -25,7 +27,6 @@ const corsOptions = {
   },
   credentials: true,
 }
-app.use(cors(corsOptions));
 
 //CrossDomain
 const PORT = '8080';
@@ -38,6 +39,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");    
     next();
 });
+app.use(cors(corsOptions));
 
 //Route Middlewares
 app.use('/api/user', authRoute);
