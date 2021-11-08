@@ -6,6 +6,7 @@ const Alexa             = require ('ask-sdk-core');
 const {ExpressAdapter } = require ("ask-sdk-express-adapter");
 const launchRequest     = require('../launchRequest');
 
+
 //Add a product
 router.post('/addProduct', async (req, res) => {
     res.contentType('application/json');
@@ -110,10 +111,8 @@ const skill = Alexa.SkillBuilders.custom()
     )
     .create();
 
-const adapter           = new ExpressAdapter(skill, true, true);
+    const adapter           = new ExpressAdapter(skill, true, true);
 
 router.post('/searchProductAlexa', adapter.getRequestHandlers());
-
-
 
 module.exports = router;
