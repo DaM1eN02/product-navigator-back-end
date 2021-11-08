@@ -99,15 +99,26 @@ router.post('/login', async (req, res) => {
         });
     }
       
-    //Checking if the email exist
-    const user = await User.findOne({
-        name: req.body.name
-    });
-    if(!user) {
-        const user2 = await User.findOne({
+    //Checking if the email exists
+    if (req.body.name == "undefined") {
+        const user = await User.findOne({
             email: req.body.email
         })
-        if (!user2) {
+        if (!user) {
+            res.status(404);
+            return res.send({
+                result: 'false',
+                message: 'Username or E-Mail was not found'
+            });
+        }
+    }
+
+    //Checking if the username exists
+    if (req.body.email == "undefined") {
+        const user = await User.findOne({
+            name: req.body.name
+        });
+        if (!user) {
             res.status(404);
             return res.send({
                 result: 'false',
