@@ -190,13 +190,12 @@ router.post('/update', async (req, res) => {
         email: req.body.email
     });
     if(emailExist) {
-        if(user.name !== req.body.name){
-
+        if(emailExist.name !== req.body.name){
             res.status(400);
-        return res.send({
-            result: 'false',
-            message: 'E-Mail already exists'
-        });
+            return res.send({
+                result: 'false',
+                message: 'E-Mail already exists'
+            });
         }
     }
 
