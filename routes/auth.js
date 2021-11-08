@@ -59,7 +59,7 @@ router.post('/register', async (req, res) => {
 
     //CATCH THE ERROR
     try {
-        const savedUser = await user.save();
+        const savedUser = await User.save();
         const dbuser = await User.findOne({
             email: req.body.email
         });
@@ -173,17 +173,31 @@ router.post('/update', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
       
-    //Checking if the email exist
+    //Checking if the User exist
     const user = await User.findOne({
         name: req.body.name
     });
 
-    if(user) {
+    if(!user) {
         res.status(400);
         return res.send({
             result: 'false',
             message: 'Something went wrong'
         });
+    }
+
+    const emailExist = await User.findOne({
+        email: req.body.email
+    });
+    if(emailExist) {
+        if(user.name !== req.body.name){
+
+            res.status(400);
+        return res.send({
+            result: 'false',
+            message: 'E-Mail already exists'
+        });
+        }
     }
 
     //Hash the password
