@@ -80,6 +80,9 @@ router.post('/deleteProduct', async (req, res) => {
     const product = await Product.deleteOne({
         name: req.body.name
     });
+    res.send({
+        message: 'Product deleted'
+    })
 })
 
 router.post('/searchProduct', async (req, res) => {
