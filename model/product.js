@@ -38,7 +38,13 @@ const productSchema = new mongoose.Schema({
     },
     location:{
         type: String,
-        required: true
+        required: true,
+        default: "Kein Standort verfügbar"
+    },
+    stock:{
+        type: String,
+        required: true,
+        default: "0 ME"
     }
 });
 

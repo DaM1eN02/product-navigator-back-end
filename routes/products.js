@@ -25,7 +25,8 @@ router.post('/addProduct', async (req, res) => {
         carbohydrate:       req.body.carbohydrate,            
         protein:            req.body.protein,
         salt:               req.body.salt,
-        location:           req.body.location 
+        location:           req.body.location, 
+        stock:              req.body.stock
     });
 
     //CATCH THE ERROR
@@ -60,7 +61,8 @@ router.post('/updateProduct', async (req, res) => {
             carbohydrate:       req.body.carbohydrate,
             protein:            req.body.protein,
             salt:               req.body.salt,
-            location:           req.body.location
+            location:           req.body.location,
+            stock:              req.body.stock
 
     });
 
