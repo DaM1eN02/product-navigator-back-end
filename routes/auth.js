@@ -12,9 +12,6 @@ const { allow } = require('@hapi/joi');
 router.post('/register', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
-    res.header({
-        "Access-Control-Allow-Origin": "*"
-    });
 
     //LETS VALIDATE THE DATA BEFORE WE MAKE A USER
     const {error} = registerValidation(req.body);
