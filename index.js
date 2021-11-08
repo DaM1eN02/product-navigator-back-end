@@ -16,30 +16,18 @@ mongoose.connect(process.env.DB_CONNECT, {
 },
 () => console.log ('connected to db!'));
 
-const whitelist = ["https://product-navigator.herokuapp.com"]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-}
-
 //CrossDomain
 const PORT = process.env.PORT || 80;
 
 //Middlewares
 app.use(express.json());
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");    
     next();
 });
-// app.use(cors(corsOptions));
 
 //Route Middlewares
 app.use('/api/user', authRoute);
