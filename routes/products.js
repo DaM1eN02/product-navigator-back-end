@@ -11,6 +11,7 @@ router.post('/addProduct', async (req, res) => {
 
     //Checking if the email exist
     const productExist = await Product.findOne({
+        marketID: req.body.marketID,
         name: req.body.name
     });
     if(productExist) return res.status(400).send({
@@ -19,15 +20,16 @@ router.post('/addProduct', async (req, res) => {
     
     //Create new product
     const product = new Product({
-        name:               req.body.name,
-        price:              req.body.price,          
-        kcal:               req.body.kcal,
-        fat:                req.body.fat,
-        carbohydrate:       req.body.carbohydrate,            
-        protein:            req.body.protein,
-        salt:               req.body.salt,
-        location:           req.body.location, 
-        stock:              req.body.stock
+        marketID: req.body.marketID,
+        name: req.body.name,
+        price: req.body.price,          
+        kcal: req.body.kcal,
+        fat: req.body.fat,
+        carbohydrate: req.body.carbohydrate,            
+        protein: req.body.protein,
+        salt: req.body.salt,
+        location: req.body.location, 
+        stock: req.body.stock
     });
 
     //CATCH THE ERROR
@@ -53,17 +55,19 @@ router.post('/updateProduct', async (req, res) => {
     }
 
     const product2 = await Product.findOneAndUpdate({
-        name: req.body.name,
+        marketID: req.body.marketID,
+        name: req.body.name
     },
     {
-            price:              req.body.price,          
-            kcal:               req.body.kcal,
-            fat:                req.body.fat,
-            carbohydrate:       req.body.carbohydrate,
-            protein:            req.body.protein,
-            salt:               req.body.salt,
-            location:           req.body.location,
-            stock:              req.body.stock
+        name: req.body.name,
+        price: req.body.price,          
+        kcal: req.body.kcal,
+        fat: req.body.fat,
+        carbohydrate: req.body.carbohydrate,
+        protein: req.body.protein,
+        salt: req.body.salt,
+        location: req.body.location,
+        stock: req.body.stock
 
     });
 
@@ -105,7 +109,8 @@ const invocationName = "product navigator";
 //   The history[] array will track previous request(s), used for contextual Help/Yes/No handling.
 //   Set up DynamoDB persistence to have the skill save and reload these attributes between skill sessions.
 
-function getMemoryAttributes() {   const memoryAttributes = {
+function getMemoryAttributes() {
+    const memoryAttributes = {
        "history":[],
 
         // The remaining attributes will be useful after DynamoDB persistence is configured
@@ -126,7 +131,7 @@ function getMemoryAttributes() {   const memoryAttributes = {
        // "birthday":"",
        // "bookmark":0,
        // "wishlist":[],
-   };
+    }
    return memoryAttributes;
 };
 
@@ -152,8 +157,8 @@ const AMAZON_CancelIntent_Handler =  {
             .speak(say)
             .withShouldEndSession(true)
             .getResponse();
-    },
-};
+    }
+}
 
 const AMAZON_HelpIntent_Handler =  {
     canHandle(handlerInput) {
