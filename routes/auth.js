@@ -12,6 +12,9 @@ const { allow } = require('@hapi/joi');
 router.post('/register', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
+    res.header({
+        "Access-Control-Allow-Origin": "*"
+    });
 
     //LETS VALIDATE THE DATA BEFORE WE MAKE A USER
     const {error} = registerValidation(req.body);
@@ -19,7 +22,7 @@ router.post('/register', async (req, res) => {
         res.status(400);
         return res.send({
             result: 'false',
-            message: 'Error sending' //error.details[0].message
+            message: error.details[0].message
         });
     }
 
@@ -79,7 +82,7 @@ router.post('/register', async (req, res) => {
     catch(err){
         res.send({
             result: 'false',
-            message: 'Error db'
+            message: err
         });
     }
 });

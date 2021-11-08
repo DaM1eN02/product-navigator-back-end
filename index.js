@@ -20,16 +20,16 @@ const whitelist = ["https://product-navigator.herokuapp.com"]
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"))
+      callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
 }
 
 //CrossDomain
-const PORT = '8080';
+const PORT = process.env.PORT || 80;
 
 //Middlewares
 app.use(express.json());
