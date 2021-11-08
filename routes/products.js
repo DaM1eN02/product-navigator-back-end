@@ -89,11 +89,6 @@ router.post('/searchProduct', async (req, res) => {
 router.post('/searchProductAlexa', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
-});
-
-
-module.exports = router;
-
 
 
 // Lambda Function code for Alexa.
@@ -851,3 +846,6 @@ const model = {
     }
   }
 };
+});
+
+module.exports = router;
