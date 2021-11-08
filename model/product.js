@@ -4,6 +4,7 @@ const productSchema = new mongoose.Schema({
     marketID: {
         type: Number,
         required: true,
+        default: 1
     },
     name: {
         type: String,
