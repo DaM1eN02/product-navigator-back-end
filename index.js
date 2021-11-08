@@ -39,7 +39,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");    
     next();
 });
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 //Route Middlewares
 app.use('/api/user', authRoute);

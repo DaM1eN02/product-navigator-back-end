@@ -101,43 +101,45 @@ router.post('/login', async (req, res) => {
 
     //Checking if the email or username exists
     let user = {
+        password: "",
+        email: ""
+    }
+    let user2 = {
+        _id: "",
         name: "",
         email: "",
         password: "",
         city: "",
         street: "",
-        birthday: "",
+        birthday: ""
     }
-
-    console.log(user);
 
     if (req.body.name == "undefined") {
-        user = await User.findOne({
+        const userEmail = await User.findOne({
             email: req.body.email
         });
-        console.log(user);
-        if (!user) {
+        if (!userEmail) {
             res.status(404);
             return res.send({
                 result: 'false',
                 message: 'Username or E-Mail was not found'
             });
         }
+        user = userEmail;
     }
     else {
-        user = await User.findOne({
+        const userName = await User.findOne({
             name: req.body.name
         });
-        console.log(user);
-        if (!user) {
+        if (!userName) {
             res.status(404);
             return res.send({
                 result: 'false',
                 message: 'Username or E-Mail was not found'
             });
         }
+        user = userName;
     }
-    console.log(user);
     
     //PASSWORD IS CORRECT
     const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -149,8 +151,8 @@ router.post('/login', async (req, res) => {
         });
     }
 
-    const user2 = await User.findOne({
-        email: req.body.email
+    user2 = await User.findOne({
+        email: user.email
     });
 
     res.send({
@@ -158,7 +160,6 @@ router.post('/login', async (req, res) => {
         name: user2.name,
         email: req.body.email,
         password: req.body.password,
-        id: user2._id,
         city: user2.city,
         street: user2.street,
         birthday: user2.birthday,
