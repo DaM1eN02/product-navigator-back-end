@@ -178,11 +178,11 @@ router.post('/update', async (req, res) => {
         name: req.body.name
     });
 
-    if(!user) {
+    if(user) {
         res.status(400);
         return res.send({
             result: 'false',
-            message: 'Somethign went wrong'
+            message: 'Something went wrong'
         });
     }
 
