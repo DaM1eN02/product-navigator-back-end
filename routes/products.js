@@ -2,6 +2,7 @@ const router        = require('express').Router();
 const verify        = require('./verifyToken');
 const Product       = require ('../model/product');
 const product = require('../model/product');
+const Alexa = require ('ask-sdk');
 
 //Add a product
 router.post('/addProduct', async (req, res) => {
@@ -89,14 +90,14 @@ router.post('/searchProductAlexa', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
 
-    const products = await Product.find({
+    const product = await Product.find({
         "name": {
             "$regex": req.body.name,
             "$options": "i"
         }
     })
 
-    res.send(products);
+    res.send(product);
 });
 
 
