@@ -74,6 +74,14 @@ router.post('/updateProduct', async (req, res) => {
     });
 });
 
+router.post('/deleteProduct', async (req, res) => {
+    res.contentType('application/json');
+    res.type('json');
+    const product = await Product.deleteOne({
+        name: req.body.name
+    });
+})
+
 router.post('/searchProduct', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
