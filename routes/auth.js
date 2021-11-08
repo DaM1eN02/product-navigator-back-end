@@ -101,15 +101,19 @@ router.post('/login', async (req, res) => {
       
     //Checking if the email exist
     const user = await User.findOne({
-        name: req.body.name,
-        email: req.body.email
+        name: req.body.name
     });
     if(!user) {
-        res.status(404);
-        return res.send({
-            result: 'false',
-            message: 'E-Mail was not found'
-        });
+        const user2 = await User.findOne({
+            email: req.body.email
+        })
+        if (!user2) {
+            res.status(404);
+            return res.send({
+                result: 'false',
+                message: 'Username or E-Mail was not found'
+            });
+        }
     }
 
     //PASSWORD IS CORRECT
