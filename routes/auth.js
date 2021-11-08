@@ -97,13 +97,19 @@ router.post('/login', async (req, res) => {
             result: 'false',
             message: error.details[0].message
         });
-    }
-      
-    //Checking if the email exists
+    } 
+
+    //Checking if the email or username exists
+    let user = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    } 
+
     if (req.body.name == "undefined") {
-        const user = await User.findOne({
+        user = await User.findOne({
             email: req.body.email
-        })
+        });
         if (!user) {
             res.status(404);
             return res.send({
@@ -112,10 +118,8 @@ router.post('/login', async (req, res) => {
             });
         }
     }
-
-    //Checking if the username exists
-    if (req.body.email == "undefined") {
-        const user = await User.findOne({
+    else {
+        user = await User.findOne({
             name: req.body.name
         });
         if (!user) {
@@ -126,6 +130,7 @@ router.post('/login', async (req, res) => {
             });
         }
     }
+    
 
     //PASSWORD IS CORRECT
     const validPass = await bcrypt.compare(req.body.password, user.password);
