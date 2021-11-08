@@ -77,13 +77,17 @@ router.post('/updateProduct', async (req, res) => {
 router.post('/deleteProduct', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
-    const product = await Product.deleteOne({
+    
+    const product = await Product.findOne({name: req.body.name });
+    if(!product) {
+        res.status(400);
+        return res.send({message: 'Product is not found'});
+    }
+    const product2 = await Product.deleteOne({
         name: req.body.name
     });
-    res.send({
-        message: 'Product deleted'
-    })
-})
+    res.send({message: 'Product deleted'})
+});
 
 router.post('/searchProduct', async (req, res) => {
     res.contentType('application/json');
