@@ -105,6 +105,26 @@ const invocationName = "product navigator";
 //   The history[] array will track previous request(s), used for contextual Help/Yes/No handling.
 //   Set up DynamoDB persistence to have the skill save and reload these attributes between skill sessions.
 
+
+const LaunchRequestHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+
+
+
+
+
 function getMemoryAttributes() {   const memoryAttributes = {
        "history":[],
 
