@@ -205,25 +205,29 @@ router.post('/update', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     //Find and update user
-    const user2 = await User.findOneAndUpdate(
-        {
-            name: req.body.name,
-        },
-        {
-            email:      req.body.email,
-            password:   hashedPassword,
-            street:     req.body.street,
-            city:       req.body.city,
-            birthday:   req.body.birthday
-        });
+    const user2 = await User.findOneAndUpdate({
+        name: req.body.name,
+    },
+    {
+        email:      req.body.email,
+        password:   hashedPassword,
+        street:     req.body.street,
+        city:       req.body.city,
+        birthday:   req.body.birthday
+    });
+
+    const updatedUser = await User.findOne({
+        name: req.body.name
+    });
+
     res.send({
-        id: user2._id,
-        name: user2.name,
-        email: req.body.email,
-        password: req.body.password,
-        city: user2.city,
-        street: user2.street,
-        birthday: user2.birthday,
+        id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        password: updatedUser.password,
+        city: updatedUser.city,
+        street: updatedUser.street,
+        birthday: updatedUser.birthday,
         result: 'true',
         message: 'User Data is updated'
     });
