@@ -158,7 +158,7 @@ router.post('/login', async (req, res) => {
     res.send({
         id: user2._id,
         name: user2.name,
-        email: req.body.email,
+        email: user2.email,
         password: req.body.password,
         city: user2.city,
         street: user2.street,
