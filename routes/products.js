@@ -38,7 +38,10 @@ router.post('/addProduct', async (req, res) => {
     //CATCH THE ERROR
     try {
         const savedProduct = await product.save();
-        res.send(savedProduct);
+        res.send({
+            savedProduct,
+            message: "Product added"
+        });
     } catch(err){
         res.status(400).send(err);
     }
