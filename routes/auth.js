@@ -59,7 +59,7 @@ router.post('/register', async (req, res) => {
 
     //CATCH THE ERROR
     try {
-        const savedUser = await User.save();
+        const savedUser = await user.save();
         const dbuser = await User.findOne({
             email: req.body.email
         });
