@@ -224,7 +224,7 @@ router.post('/update', async (req, res) => {
         id: updatedUser._id,
         name: updatedUser.name,
         email: updatedUser.email,
-        password: updatedUser.password,
+        password: req.body.password,
         city: updatedUser.city,
         street: updatedUser.street,
         birthday: updatedUser.birthday,
