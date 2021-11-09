@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
     marketID: {
-        type: Number,
+        type: String,
         required: true,
         default: 1
     },
@@ -16,37 +16,37 @@ const productSchema = new mongoose.Schema({
         required: true,
         max: 255
     },
-    kcal:{
+    kcal: {
         type: String,
         required: true,
         max: 255
     },
-    fat:{
+    fat: {
         type: String,
         required: true,
         max: 255
     },
-    carbohydrate:{
+    carbohydrate: {
         type: String,
         required: true,
         max: 255
     },
-    protein:{
+    protein: {
         type: String,
         required: true,
         max: 255
     },
-    salt:{
+    salt: {
         type: String,
         required: true,
         max: 255
     },
-    location:{
+    location: {
         type: String,
         required: true,
         default: "Kein Standort verfügbar"
     },
-    stock:{
+    stock: {
         type: String,
         required: true,
         default: "0 ME"
