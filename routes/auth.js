@@ -217,6 +217,13 @@ router.post('/update', async (req, res) => {
             birthday:   req.body.birthday
         });
     res.send({
+        id: user2._id,
+        name: user2.name,
+        email: req.body.email,
+        password: req.body.password,
+        city: user2.city,
+        street: user2.street,
+        birthday: user2.birthday,
         result: 'true',
         message: 'User Data is updated'
     });
