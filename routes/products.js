@@ -14,6 +14,7 @@ router.post('/addProduct', async (req, res) => {
 
     //Checking if the email exist
     const productExist = await Product.findOne({
+        marketID: req.body.marketID,
         name: req.body.name
     });
     if(productExist) return res.status(400).send({
@@ -22,15 +23,16 @@ router.post('/addProduct', async (req, res) => {
     
     //Create new product
     const product = new Product({
-        name:               req.body.name,
-        price:              req.body.price,          
-        kcal:               req.body.kcal,
-        fat:                req.body.fat,
-        carbohydrate:       req.body.carbohydrate,            
-        protein:            req.body.protein,
-        salt:               req.body.salt,
-        location:           req.body.location, 
-        stock:              req.body.stock
+        marketID: req.body.marketID,
+        name: req.body.name,
+        price: req.body.price,          
+        kcal: req.body.kcal,
+        fat: req.body.fat,
+        carbohydrate: req.body.carbohydrate,            
+        protein: req.body.protein,
+        salt: req.body.salt,
+        location: req.body.location, 
+        stock: req.body.stock
     });
 
     //CATCH THE ERROR
@@ -49,25 +51,30 @@ router.post('/updateProduct', async (req, res) => {
     res.type('json');
       
     //Checking if the product exist
-    const product = await Product.findOne({name: req.body.name });
+    const product = await Product.findOne({
+        marketID: req.body.marketID,
+        name: req.body.name
+    });
     if(!product) {
         res.status(400);
-        return res.send({message: 'Product is not found'});
+        return res.send({
+            message: 'Product is not found'
+        });
     }
 
     const product2 = await Product.findOneAndUpdate({
-        name: req.body.name,
+        marketID: req.body.marketID,
+        name: req.body.name
     },
     {
-            price:              req.body.price,          
-            kcal:               req.body.kcal,
-            fat:                req.body.fat,
-            carbohydrate:       req.body.carbohydrate,
-            protein:            req.body.protein,
-            salt:               req.body.salt,
-            location:           req.body.location,
-            stock:              req.body.stock
-
+        price: req.body.price,          
+        kcal: req.body.kcal,
+        fat: req.body.fat,
+        carbohydrate: req.body.carbohydrate,
+        protein: req.body.protein,
+        salt: req.body.salt,
+        location: req.body.location,
+        stock: req.body.stock
     });
 
     res.send({
@@ -79,15 +86,23 @@ router.post('/deleteProduct', async (req, res) => {
     res.contentType('application/json');
     res.type('json');
     
-    const product = await Product.findOne({name: req.body.name });
-    if(!product) {
-        res.status(400);
-        return res.send({message: 'Product is not found'});
-    }
-    const product2 = await Product.deleteOne({
+    const product = await Product.findOne({
+        marketID: req.body.marketID,
         name: req.body.name
     });
-    res.send({message: 'Product deleted'})
+    if(!product) {
+        res.status(400);
+        return res.send({
+            message: 'Product is not found'
+        });
+    }
+    const product2 = await Product.deleteOne({
+        marketID: req.body.marketID,
+        name: req.body.name
+    });
+    res.send({
+        message: 'Product deleted'
+    })
 });
 
 router.post('/searchProduct', async (req, res) => {
@@ -98,7 +113,8 @@ router.post('/searchProduct', async (req, res) => {
         "name": {
             "$regex": req.body.name,
             "$options": "i"
-        }
+        },
+        marketID: req.body.marketID
     })
 
     res.send(products);
